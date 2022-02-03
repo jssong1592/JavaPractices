@@ -1,4 +1,4 @@
-package Baekjoon.S5.Baekjoon_17478;
+package BOJ.S5.BOJ_17478;
 
 import java.util.Scanner;
 

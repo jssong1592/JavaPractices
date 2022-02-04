@@ -96,23 +96,28 @@ public class Solution {
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
 		int T = Integer.parseInt(br.readLine());
+		
 		for (int tc=0;tc<T;tc++) {
 			String[] info = br.readLine().split(" ");
 			int x = Integer.parseInt(info[0]);
 			int y = Integer.parseInt(info[1]);
+			
 			map = new String[x][];
 			
 			for (int i=0;i<x;i++) {
 				map[i] = br.readLine().split("");
 				for (int j=0;j<y;j++) {
-					if (map[i][j].equals("^")||map[i][j].equals("v")||map[i][j].equals("<")||map[i][j].equals(">")) 
+					if (map[i][j].equals("^")||map[i][j].equals("v")||
+							map[i][j].equals("<")||map[i][j].equals(">")) 
 					setPos(i,j,map[i][j]);
 				}
 			}
 			
 			int cnt = Integer.parseInt(br.readLine());
 			String[] cmd = br.readLine().split("");
+			
 			for (String s:cmd) {
 				switch (s) {
 				case "U":

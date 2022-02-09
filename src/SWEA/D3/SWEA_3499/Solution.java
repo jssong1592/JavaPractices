@@ -1,4 +1,4 @@
-package BOJ.D3.SWEA_3499;
+package SWEA.D3.SWEA_3499;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

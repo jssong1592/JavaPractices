@@ -1,4 +1,4 @@
-package SWEA.D2.SWEA_2001;
+package SWEA.D2.SWEA_2001_ÆÄ¸®ÅðÄ¡;
 
 import java.io.*;
 import java.util.*;

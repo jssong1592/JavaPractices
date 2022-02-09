@@ -1,4 +1,4 @@
-package SWEA.D3.SWEA_9229;
+package SWEA.D3.SWEA_9229_ÇÑºóÀÌ¿ÍSpotMart;
 
 
 import java.io.BufferedReader;

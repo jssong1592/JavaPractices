@@ -1,4 +1,4 @@
-package PRG.LV2.PRG_42883;
+package PRG.LV2.PRG_42883_큰수만들기;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

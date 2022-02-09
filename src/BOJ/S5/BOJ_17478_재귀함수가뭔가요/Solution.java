@@ -1,4 +1,4 @@
-package BOJ.S5.BOJ_17478;
+package BOJ.S5.BOJ_17478_Àç±ÍÇÔ¼ö°¡¹º°¡¿ä;
 
 import java.util.Scanner;
 

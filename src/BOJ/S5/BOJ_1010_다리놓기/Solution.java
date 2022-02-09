@@ -1,4 +1,4 @@
-package BOJ.S5.BOJ_1010;
+package BOJ.S5.BOJ_1010_다리놓기;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

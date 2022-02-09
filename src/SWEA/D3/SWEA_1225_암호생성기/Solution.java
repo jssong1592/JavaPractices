@@ -1,4 +1,4 @@
-package SWEA.D3.SWEA_1225;
+package SWEA.D3.SWEA_1225_암호생성기;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package SWEA.D3.SWEA_1873;
+package SWEA.D3.SWEA_1873_상호의배틀필드;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -44,6 +44,7 @@ public class Solution {
 						break;
 					case 2:
 						y += cnt;
+						break;
 					}
 					if (x<N&&y<N) { // 도착할 위치가 연못 내부에 있다면
 						if(!map[x][y]) { // 도착한 위치에 아무도 마킹을 안했다면 다음 뛰기 단계로

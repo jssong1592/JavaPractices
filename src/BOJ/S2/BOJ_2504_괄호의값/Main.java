@@ -59,8 +59,8 @@ public class Main {
 				}
 			}
 			
-//			System.out.println(stack.toString());
-//			System.out.println(isLayered.toString());
+			System.out.println(stack.toString());
+			System.out.println(isLayered.toString());
 			
 			
 		}

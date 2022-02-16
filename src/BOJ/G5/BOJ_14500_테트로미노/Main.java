@@ -22,6 +22,7 @@ public class Main {
 			}
 		}
 		
+		
 		for (int i=3;i<N+3;i++) {
 			for (int j=3;j<M+3;j++) {
 				//1자 모양(가로)
@@ -34,16 +35,16 @@ public class Main {
 				result = map[i][j] + map[i+1][j] + map[i][j+1] + map[i+1][j+1];
 				if (result>maxResult) maxResult = result;
 				//ㅗ
-				result = map[i][j] + map[i][j+1] + map[i][j+2] + map[i-1][j+1];
+				result = map[i+1][j] + map[i+1][j+1] + map[i+1][j+2] + map[i][j+1];
 				if (result>maxResult) maxResult = result;
 				//ㅜ
-				result = map[i][j] + map[i][j-1] + map[i][j-2] + map[i+1][j-1];
+				result = map[i][j] + map[i][j+1] + map[i][j+2] + map[i+1][j+1];
 				if (result>maxResult) maxResult = result;
 				//ㅏ
-				result = map[i][j] + map[i-1][j] + map[i-2][j] + map[i-1][j+1];
+				result = map[i][j] + map[i+1][j] + map[i+2][j] + map[i+1][j+1];
 				if (result>maxResult) maxResult = result;
 				//ㅓ
-				result = map[i][j] + map[i+1][j] + map[i+2][j] + map[i-1][j+1];
+				result = map[i][j+1] + map[i+1][j+1] + map[i+2][j+1] + map[i+1][j];
 				if (result>maxResult) maxResult = result;
 				//ㄴ(짧은 꼭지가 스타트)
 				result = map[i][j] + map[i+1][j] + map[i+1][j+1] + map[i+1][j+2];
@@ -73,13 +74,13 @@ public class Main {
 				result = map[i][j] + map[i][j+1] + map[i+1][j+1] + map[i+1][j+2];
 				if (result>maxResult) maxResult = result;
 				//ㄹ2
-				result = map[i][j] + map[i+1][j] + map[i+1][j-1] + map[i+2][j-1];
+				result = map[i][j+1] + map[i+1][j+1] + map[i+1][j] + map[i+2][j];
 				if (result>maxResult) maxResult = result;
 				//ㄹ3
-				result = map[i][j] + map[i][j-1] + map[i+1][j-1] + map[i+1][j-2];
+				result = map[i][j] + map[i+1][j] + map[i+1][j+1] + map[i+2][j+1];
 				if (result>maxResult) maxResult = result;
 				//ㄹ4
-				result = map[i][j] + map[i-1][j] + map[i-1][j-1] + map[i-2][j-1];
+				result = map[i+1][j] + map[i+1][j+1] + map[i][j+1] + map[i][j+2];
 				if (result>maxResult) maxResult = result;
 			}
 		}

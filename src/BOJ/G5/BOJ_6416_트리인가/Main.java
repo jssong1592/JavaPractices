@@ -16,16 +16,16 @@ public class Main {
 		boolean flag = true;
 		HashMap<Integer,Integer> parentOf = new HashMap<>();
 		HashSet<Integer> nodes = new HashSet<>();
-		HashSet<int[]> vertexes = new HashSet<>();
+		HashSet<int[]> edges = new HashSet<>();
 		while(true) {
 			//줄 읽기
 			String line = br.readLine();
 			
 			String[] st = line.split("  ");
 			
-			for (String vertex:st) {
-				if (vertex.equals("0 0")) {//케이스 하나가 끝났으므로 결과 처리 후 플래그 초기화
-					if (nodes.size()==0||(flag&&countRoot(nodes,parentOf)==1&&nodes.size()-vertexes.size()==1))
+			for (String edge:st) {
+				if (edge.equals("0 0")) {//케이스 하나가 끝났으므로 결과 처리 후 플래그 초기화
+					if (nodes.size()==0||(flag&&countRoot(nodes,parentOf)==1&&nodes.size()-edges.size()==1))
 						System.out.println("Case "+(tc)+" is a tree.");
 					else System.out.println("Case "+(tc)+" is not a tree.");
 					
@@ -35,19 +35,19 @@ public class Main {
 					flag = true;
 					parentOf = new HashMap<>();
 					nodes = new HashSet<>();
-					vertexes = new HashSet<>();
+					edges = new HashSet<>();
 					
 					line = br.readLine();
 					
 					break;
 				} else {
-					StringTokenizer st2 = new StringTokenizer(vertex);
+					StringTokenizer st2 = new StringTokenizer(edge);
 					int parent = Integer.parseInt(st2.nextToken());
 					int child = Integer.parseInt(st2.nextToken());
 					
 					nodes.add(parent);
 					nodes.add(child);
-					vertexes.add(new int[] {parent,child});
+					edges.add(new int[] {parent,child});
 					
 					// 수정) 트리일 경우
 					// ★. 노드가 없어도 트리다

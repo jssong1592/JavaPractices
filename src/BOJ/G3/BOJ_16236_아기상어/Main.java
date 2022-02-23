@@ -10,7 +10,6 @@ import java.util.StringTokenizer;
 public class Main {
 	static int N;
 	static int[][] map;
-	static PriorityQueue<Fish> fishList;
 	static int[] dx = {-1,1,0,0};
 	static int[] dy = {0,0,-1,1};
 	
@@ -39,11 +38,11 @@ public class Main {
 		int time = 0;
 		int eatCnt = size;
 		while (true) {
-			PriorityQueue<Fish> candidate = bfs(startX,startY,size);
+			PriorityQueue<Fish> fishList = bfs(startX,startY,size);
 			//먹을 수 있는 물고기가 없으면 반복문 끝
-			if (candidate.isEmpty()) break;
+			if (fishList.isEmpty()) break;
 			else {
-				Fish fish = candidate.poll();
+				Fish fish = fishList.poll();
 				//이동까지 걸린 시간을 더하고, 상어 위치 갱신
 				time += fish.distance;
 				map[startX][startY] = 0;
@@ -69,11 +68,10 @@ public class Main {
 	static class Fish implements Comparable<Fish> {
 		int x,y,distance,size;
 		
-		public Fish(int x, int y,int distance, int size) {
+		public Fish(int x, int y,int distance) {
 			this.x = x;
 			this.y = y;
 			this.distance = distance;
-			this.size = size;
 		}
 
 		@Override
@@ -91,7 +89,7 @@ public class Main {
 		
 		
 		Queue<int[]> queue = new LinkedList<>();
-		fishList = new PriorityQueue<>();
+		PriorityQueue<Fish> fishList = new PriorityQueue<>();
 		
 		visited[startX][startY] = true;
 		queue.offer(new int[] {startX,startY});
@@ -103,13 +101,14 @@ public class Main {
 			
 			//탐색한 위치에 물고기가 있고, 상어 사이즈보다 작은 사이즈라면 우선 순위 큐에 후보로 넣기 
 			if (map[now[0]][now[1]]>0&&map[now[0]][now[1]]<9&&map[now[0]][now[1]]<size) {
-				fishList.offer(new Fish(now[0],now[1],dist[now[0]][now[1]], map[now[0]][now[1]]));
+				fishList.offer(new Fish(now[0],now[1],dist[now[0]][now[1]]));
 			}
 			
 			for (int i=0;i<4;i++) {
 				int nx = now[0] + dx[i];
 				int ny = now[1] + dy[i];
 				
+				//범위를 벗어나거나, 방문한 곳이거나, 상어 사이즈보다 물고기 사이즈가 크면 스킵
 				if (nx<0||nx>=N||ny<0||ny>=N||visited[nx][ny]||map[nx][ny]>size) continue;
 				visited[nx][ny] = true;
 				queue.offer(new int[] {nx,ny});

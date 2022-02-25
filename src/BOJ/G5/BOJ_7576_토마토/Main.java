@@ -17,7 +17,7 @@ public class Main {
 		int N = Integer.parseInt(st.nextToken());
 		
 		int[][] matrix = new int[N][M];
-		boolean[][] visited = new boolean[N][M];
+		
 		Queue<int[]> queue = new LinkedList<>();
 		
 		for (int i=0;i<N;i++) {
@@ -26,7 +26,7 @@ public class Main {
 				matrix[i][j] = Integer.parseInt(st.nextToken());
 				if (matrix[i][j]==1) {
 					queue.offer(new int[]{i,j});
-					visited[i][j] = true;
+					
 				}
 			}
 		}
@@ -42,8 +42,8 @@ public class Main {
 			for (int i=0;i<4;i++) {
 				int nx = x + dx[i];
 				int ny = y + dy[i];
-				if (nx>=0&&nx<N&&ny>=0&&ny<M&&!visited[nx][ny]&&matrix[nx][ny]==0) {
-					visited[nx][ny] = true;
+				if (nx>=0&&nx<N&&ny>=0&&ny<M&&matrix[nx][ny]==0) {
+					
 					matrix[nx][ny] = matrix[x][y]+1;
 					queue.offer(new int[] {nx,ny});
 				}

@@ -18,10 +18,8 @@ public class Main {
 		public Point(int x,int y, int k) {
 			this.x = x;
 			this.y = y;
-			this.k = k;
-			
+			this.k = k;	
 		}
-		
 	}
 	
 	public static void main(String[] args) throws Exception {

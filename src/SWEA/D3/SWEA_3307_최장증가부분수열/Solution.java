@@ -36,7 +36,7 @@ public class Solution {
 				if (smallest[idx] > arr[i]) smallest[idx] = arr[i];
 				//해당 인덱스(i)의 숫자가 마지막으로 들어가는 가장 긴 부분수열의 길이는 
 				//그 숫자보다 작은 숫자로 끝나는 수열 중 가장 긴 수열의 길이 + 1
-				dp[i] = dp[idx-1] + 1;
+				dp[i] = dp[smallest[idx-1]] + 1;
 			}
 			
 			int ans = 0;
@@ -47,8 +47,8 @@ public class Solution {
 			
 			sb.append("#"+tc+" "+ans+"\n");
 
-//			System.out.println(Arrays.toString(dp));
-//			System.out.println(Arrays.toString(smallest));
+			System.out.println(Arrays.toString(dp));
+			System.out.println(Arrays.toString(smallest));
 			
 		}
 		System.out.println(sb.toString());

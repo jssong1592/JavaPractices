@@ -51,10 +51,13 @@ public class Main {
 					if (nx>=0&&nx<N&&ny>=0&&ny<N) {
 						if (map[nx][ny] + dist < result[nx][ny]) {
 							result[nx][ny] = map[nx][ny] + dist;
+<<<<<<< HEAD
 //							for (int l=0;l<N;l++) {
 //								System.out.println(Arrays.toString(result[l]));								
 //							}
 //							System.out.println();
+=======
+>>>>>>> 36f477b73a412a6a5ea06c7541ed28c5178e64c4
 							pq.offer(new int[] {nx,ny,map[nx][ny]+dist});
 						}
 					}

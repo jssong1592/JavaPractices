@@ -1,4 +1,4 @@
-package BOJ.G5.BOJ_1759_¾ÏÈ£¸¸µé±â;
+package BOJ.G5.BOJ_1759_ì•”í˜¸ë§Œë“¤ê¸°;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -25,7 +25,7 @@ public class Main {
 			arr[i] = st.nextToken().charAt(0);
 		}
 		
-		//¹®ÀÚ ¸®½ºÆ®¸¦ Á¤·ÄÇØ¼­ ¹®ÀÚ¿­µéÀÌ ¿À¸§Â÷¼øÀ¸·Î ³ª¿Ã ¼ö ÀÖ°Ô Ã³¸® 
+		//ë¬¸ì ë¦¬ìŠ¤íŠ¸ë¥¼ ì •ë ¬í•´ì„œ ë¬¸ìì—´ë“¤ì´ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ë‚˜ì˜¬ ìˆ˜ ìˆê²Œ ì²˜ë¦¬ 
 		Arrays.sort(arr);
 		
 		sb = new StringBuilder();
@@ -36,23 +36,23 @@ public class Main {
 	}
 
 	static void pickLetter(int cnt, int start,int vowelCnt,int constCnt, StringBuilder temp) {
-		//¹®ÀÚ¿­ÀÌ Á¶°ÇÀ» ¸¸Á·ÇÏ¸é ´ä¿¡ ºÙ¿©ÁÖ°í Àç±Í¿¡¼­ µ¹¾Æ¿À±â
+		//ë¬¸ìì—´ì´ ì¡°ê±´ì„ ë§Œì¡±í•˜ë©´ ë‹µì— ë¶™ì—¬ì£¼ê³  ì¬ê·€ì—ì„œ ëŒì•„ì˜¤ê¸°
 		if (cnt==L&&vowelCnt>=1&&constCnt>=2) {
 			sb.append(temp).append("\n");
 			
 			return;
 		} 
 		for (int i=start;i<C;i++) {
-			//ºÙÀÏ ¾ËÆÄºªÀÌ ÀÚÀ½, ¸ğÀ½ÀÎÁö¿¡ µû¶ó »óÅÂ°ª º¯È­ ÁÖ°í ÇöÀç ¹®ÀÚ¿­¿¡ ºÙÀÌ±â
+			//ë¶™ì¼ ì•ŒíŒŒë²³ì´ ììŒ, ëª¨ìŒì¸ì§€ì— ë”°ë¼ ìƒíƒœê°’ ë³€í™” ì£¼ê³  í˜„ì¬ ë¬¸ìì—´ì— ë¶™ì´ê¸°
 			if (arr[i]=='a'||arr[i]=='e'||arr[i]=='i'||arr[i]=='o'||arr[i]=='u') vowelCnt++;
 			else constCnt++;
 			
 			temp.append(arr[i]);
 			
-			//Á¶ÇÕÀ» À§ÇØ ´ÙÀ½ ¹®ÀÚ¿­·Î ÀÌµ¿
+			//ì¡°í•©ì„ ìœ„í•´ ë‹¤ìŒ ë¬¸ìì—´ë¡œ ì´ë™
 			pickLetter(cnt+1, i+1, vowelCnt, constCnt, temp);
 			
-			//Àç±Í¿¡¼­ µ¹¾Æ¿Ã ¶§ ÇöÀç ¹®ÀÚ¸¦ ºÙÀÌ±â ÀÌÀü »óÅÂ·Î µÇµ¹·Á ÁÖ±â
+			//ì¬ê·€ì—ì„œ ëŒì•„ì˜¬ ë•Œ í˜„ì¬ ë¬¸ìë¥¼ ë¶™ì´ê¸° ì´ì „ ìƒíƒœë¡œ ë˜ëŒë ¤ ì£¼ê¸°
 			if (arr[i]=='a'||arr[i]=='e'||arr[i]=='i'||arr[i]=='o'||arr[i]=='u') vowelCnt--;
 			else constCnt--;
 			temp.deleteCharAt(temp.length()-1);

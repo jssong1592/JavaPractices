@@ -1,4 +1,4 @@
-package SWEA.D3.SWEA_1289_¿øÀçÀÇ¸Ş¸ğ¸®º¹±¸ÇÏ±â;
+package SWEA.D3.SWEA_1289_ì›ì¬ì˜ë©”ëª¨ë¦¬ë³µêµ¬í•˜ê¸°;
 
 import java.io.BufferedReader;
 import java.io.IOException;

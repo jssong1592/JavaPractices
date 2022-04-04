@@ -1,4 +1,4 @@
-package BOJ.G4.BOJ_22865_°¡Àå¸Õ°÷;
+package BOJ.G4.BOJ_22865_ê°€ì¥ë¨¼ê³³;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -56,7 +56,7 @@ public class Main {
 		}
 		
 		
-		// °¢ Ä£±¸¿¡ ´ëÇÏ¿© 1~N¹ø ¶¥±îÁö ÃÑ 3¹ø ´ÙÀÍ½ºÆ®¶ó¸¦ µ¹·Á¼­ ¶¥¸¶´Ù ÃÖ¼Ò°ª °»½Å 
+		// ê° ì¹œêµ¬ì— ëŒ€í•˜ì—¬ 1~Në²ˆ ë•…ê¹Œì§€ ì´ 3ë²ˆ ë‹¤ìµìŠ¤íŠ¸ë¼ë¥¼ ëŒë ¤ì„œ ë•…ë§ˆë‹¤ ìµœì†Œê°’ ê°±ì‹  
 		int[] result = new int[N+1];
 		Arrays.fill(result, Integer.MAX_VALUE);
 		for (int i=0;i<3;i++) {
@@ -69,7 +69,7 @@ public class Main {
 		
 //		System.out.println(Arrays.toString(result));
 		
-		// ÃÖ¼Ò°ªÀ¸·Î °»½ÅµÈ ¶¥µé Áß¿¡¼­ ÃÖ´ë°ªÀ» °¡Áø ¶¥À» Å½»ö -> °¡Àå ¸Õ ¶¥
+		// ìµœì†Œê°’ìœ¼ë¡œ ê°±ì‹ ëœ ë•…ë“¤ ì¤‘ì—ì„œ ìµœëŒ€ê°’ì„ ê°€ì§„ ë•…ì„ íƒìƒ‰ -> ê°€ì¥ ë¨¼ ë•…
 		int maxDist = -1;
 		int maxIdx = N+1;
 		for (int i=1;i<N+1;i++) {
@@ -92,12 +92,12 @@ public class Main {
 		pq.offer(new Pair(start,0));
 		while (!pq.isEmpty()) {
 			Pair curNode = pq.poll();
-			// curNodeÀÇ distance´Â ½ÃÀÛ ³ëµå·ÎºÎÅÍÀÇ °Å¸®°¡ ´©ÀûµÈ »óÅÂ
-			// curNodeÀÇ ÃÖ´Ü°Å¸®°¡ ÀÌ¹Ì °»½ÅµÇ¾î ÀÖ´Ù¸é ÄÁÆ¼´º
+			// curNodeì˜ distanceëŠ” ì‹œì‘ ë…¸ë“œë¡œë¶€í„°ì˜ ê±°ë¦¬ê°€ ëˆ„ì ëœ ìƒíƒœ
+			// curNodeì˜ ìµœë‹¨ê±°ë¦¬ê°€ ì´ë¯¸ ê°±ì‹ ë˜ì–´ ìˆë‹¤ë©´ ì»¨í‹°ë‰´
 			if (distance[curNode.node]<curNode.distance) continue;
 			
-			// °»½ÅÇÒ ¼ö ÀÖ´Ù¸é, curNode¿¡ ÀÎÁ¢ÇÑ nextNodeµé¿¡ ´ëÇÏ¿© curNode¸¦ °ÅÃÄ nextNode·Î °¡´Â °æ·Î¸¦ °»½ÅÇÒ ¼ö ÀÖ´ÂÁö ÆÇº°
-			// nextNodeÀÇ ÃÖ´Ü°Å¸®°¡ °»½ÅµÇ¸é, ¿ì¼±¼øÀ§ Å¥¿¡ ÇØ´ç ³ëµå¿Í ´©ÀûµÈ °Å¸® Á¤º¸¸¦ ´ã¾Æ offer
+			// ê°±ì‹ í•  ìˆ˜ ìˆë‹¤ë©´, curNodeì— ì¸ì ‘í•œ nextNodeë“¤ì— ëŒ€í•˜ì—¬ curNodeë¥¼ ê±°ì³ nextNodeë¡œ ê°€ëŠ” ê²½ë¡œë¥¼ ê°±ì‹ í•  ìˆ˜ ìˆëŠ”ì§€ íŒë³„
+			// nextNodeì˜ ìµœë‹¨ê±°ë¦¬ê°€ ê°±ì‹ ë˜ë©´, ìš°ì„ ìˆœìœ„ íì— í•´ë‹¹ ë…¸ë“œì™€ ëˆ„ì ëœ ê±°ë¦¬ ì •ë³´ë¥¼ ë‹´ì•„ offer
 			for (Pair nextNode:adjList[curNode.node]) {
 				if (distance[nextNode.node]>distance[curNode.node]+nextNode.distance) {
 					distance[nextNode.node] = distance[curNode.node]+nextNode.distance;

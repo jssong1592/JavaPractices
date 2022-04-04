@@ -1,4 +1,4 @@
-package BOJ.S1.BOJ_2961_µµ¿µÀÌ°¡¸¸µç¸ÀÀÖ´ÂÀ½½Ä;
+package BOJ.S1.BOJ_2961_ë„ì˜ì´ê°€ë§Œë“ ë§›ìˆëŠ”ìŒì‹;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -12,7 +12,7 @@ public class Main {
 		int N = Integer.parseInt(br.readLine());
 		int[][] food = new int[N][];
 		
-		for (int i=0;i<N;i++) { // Àç·á Á¤º¸ ÀúÀå
+		for (int i=0;i<N;i++) { // ì¬ë£Œ ì •ë³´ ì €ì¥
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			int S = Integer.parseInt(st.nextToken());
 			int B = Integer.parseInt(st.nextToken());
@@ -22,12 +22,12 @@ public class Main {
 		
 		int result = Integer.MAX_VALUE;
 		
-		//Àç·á ÁıÇÕÀÇ ¸ğµç ºÎºĞÁıÇÕ¿¡ ´ëÇÏ¿© Å½»öÇÏ±â
-		for (int i=1;i<(1<<N);i++) { //ºñÆ®¸¶½ºÅ·À¸·Î ºÎºĞÁıÇÕ ÆÇº°ÇÏ±â(°øÁıÇÕ Á¦¿Ü´Ï±î 0 »©°í 1ºÎÅÍ)
+		//ì¬ë£Œ ì§‘í•©ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì— ëŒ€í•˜ì—¬ íƒìƒ‰í•˜ê¸°
+		for (int i=1;i<(1<<N);i++) { //ë¹„íŠ¸ë§ˆìŠ¤í‚¹ìœ¼ë¡œ ë¶€ë¶„ì§‘í•© íŒë³„í•˜ê¸°(ê³µì§‘í•© ì œì™¸ë‹ˆê¹Œ 0 ë¹¼ê³  1ë¶€í„°)
 			int sour = 1;
 			int bitter = 0;
-			for (int j=0;j<N;j++) { //iÀÇ 0~N-1¹øÂ° ºñÆ®°¡ ÄÑÁ®ÀÖ´ÂÁö 1À» j¸¸Å­ ºñÆ®½ÃÇÁÆ®ÇÏ¸é¼­ ÆÇº° 
-				if (((1<<j)&i)!=0) { //0ÀÌ ¾È³ª¿À¸é ºñÆ®°¡ ÄÑÁ®ÀÖÀ½. µû¶ó¼­ ¼±ÅÃµÈ ÀÎµ¦½º Ãë±ŞÇÏ¿© ¿¬»ê
+			for (int j=0;j<N;j++) { //iì˜ 0~N-1ë²ˆì§¸ ë¹„íŠ¸ê°€ ì¼œì ¸ìˆëŠ”ì§€ 1ì„ jë§Œí¼ ë¹„íŠ¸ì‹œí”„íŠ¸í•˜ë©´ì„œ íŒë³„ 
+				if (((1<<j)&i)!=0) { //0ì´ ì•ˆë‚˜ì˜¤ë©´ ë¹„íŠ¸ê°€ ì¼œì ¸ìˆìŒ. ë”°ë¼ì„œ ì„ íƒëœ ì¸ë±ìŠ¤ ì·¨ê¸‰í•˜ì—¬ ì—°ì‚°
 					sour *= food[j][0];
 					bitter += food[j][1];
 					

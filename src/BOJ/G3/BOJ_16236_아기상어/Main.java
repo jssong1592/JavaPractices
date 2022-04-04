@@ -1,4 +1,4 @@
-package BOJ.G3.BOJ_16236_¾Æ±â»ó¾î;
+package BOJ.G3.BOJ_16236_ì•„ê¸°ìƒì–´;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,7 +18,7 @@ public class Main {
 
 		N = Integer.parseInt(br.readLine());
 		
-		//°ø°£ Á¤º¸ ÀúÀå, »ó¾î »óÅÂ ÃÊ±âÈ­
+		//ê³µê°„ ì •ë³´ ì €ì¥, ìƒì–´ ìƒíƒœ ì´ˆê¸°í™”
 		map = new int[N][N];
 		int startX = -1, startY = -1;
 		int size = 2;
@@ -34,16 +34,16 @@ public class Main {
 			}
 		}
 		
-		//bfs¸¦ ÅëÇØ ¸ÔÀ» ¼ö ÀÖ´Â ¹°°í±â ÈÄº¸ Å½»ö
+		//bfsë¥¼ í†µí•´ ë¨¹ì„ ìˆ˜ ìˆëŠ” ë¬¼ê³ ê¸° í›„ë³´ íƒìƒ‰
 		int time = 0;
 		int eatCnt = size;
 		while (true) {
 			PriorityQueue<Fish> fishList = bfs(startX,startY,size);
-			//¸ÔÀ» ¼ö ÀÖ´Â ¹°°í±â°¡ ¾øÀ¸¸é ¹İº¹¹® ³¡
+			//ë¨¹ì„ ìˆ˜ ìˆëŠ” ë¬¼ê³ ê¸°ê°€ ì—†ìœ¼ë©´ ë°˜ë³µë¬¸ ë
 			if (fishList.isEmpty()) break;
 			else {
 				Fish fish = fishList.poll();
-				//ÀÌµ¿±îÁö °É¸° ½Ã°£À» ´õÇÏ°í, »ó¾î À§Ä¡ °»½Å
+				//ì´ë™ê¹Œì§€ ê±¸ë¦° ì‹œê°„ì„ ë”í•˜ê³ , ìƒì–´ ìœ„ì¹˜ ê°±ì‹ 
 				time += fish.distance;
 				map[startX][startY] = 0;
 				map[fish.x][fish.y] = 9;
@@ -51,7 +51,7 @@ public class Main {
 				startX = fish.x;
 				startY = fish.y;
 				
-				//¹°°í±â¸¦ ¸Ô°í, ¼ºÀåÇÒ ¼ö ÀÖÀ¸¸é ¼ºÀå
+				//ë¬¼ê³ ê¸°ë¥¼ ë¨¹ê³ , ì„±ì¥í•  ìˆ˜ ìˆìœ¼ë©´ ì„±ì¥
 				eatCnt--;
 				if (eatCnt==0) {
 					size++;
@@ -99,7 +99,7 @@ public class Main {
 			int[] now = queue.poll();
 			
 			
-			//Å½»öÇÑ À§Ä¡¿¡ ¹°°í±â°¡ ÀÖ°í, »ó¾î »çÀÌÁîº¸´Ù ÀÛÀº »çÀÌÁî¶ó¸é ¿ì¼± ¼øÀ§ Å¥¿¡ ÈÄº¸·Î ³Ö±â 
+			//íƒìƒ‰í•œ ìœ„ì¹˜ì— ë¬¼ê³ ê¸°ê°€ ìˆê³ , ìƒì–´ ì‚¬ì´ì¦ˆë³´ë‹¤ ì‘ì€ ì‚¬ì´ì¦ˆë¼ë©´ ìš°ì„  ìˆœìœ„ íì— í›„ë³´ë¡œ ë„£ê¸° 
 			if (map[now[0]][now[1]]>0&&map[now[0]][now[1]]<9&&map[now[0]][now[1]]<size) {
 				fishList.offer(new Fish(now[0],now[1],dist[now[0]][now[1]]));
 			}
@@ -108,7 +108,7 @@ public class Main {
 				int nx = now[0] + dx[i];
 				int ny = now[1] + dy[i];
 				
-				//¹üÀ§¸¦ ¹ş¾î³ª°Å³ª, ¹æ¹®ÇÑ °÷ÀÌ°Å³ª, »ó¾î »çÀÌÁîº¸´Ù ¹°°í±â »çÀÌÁî°¡ Å©¸é ½ºÅµ
+				//ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ê±°ë‚˜, ë°©ë¬¸í•œ ê³³ì´ê±°ë‚˜, ìƒì–´ ì‚¬ì´ì¦ˆë³´ë‹¤ ë¬¼ê³ ê¸° ì‚¬ì´ì¦ˆê°€ í¬ë©´ ìŠ¤í‚µ
 				if (nx<0||nx>=N||ny<0||ny>=N||visited[nx][ny]||map[nx][ny]>size) continue;
 				visited[nx][ny] = true;
 				queue.offer(new int[] {nx,ny});
@@ -121,7 +121,7 @@ public class Main {
 //		}
 //		System.out.println();
 		
-		//bfs°¡ ³¡³ª¸é ¹°°í±â ÈÄº¸ ¸®ÅÏ
+		//bfsê°€ ëë‚˜ë©´ ë¬¼ê³ ê¸° í›„ë³´ ë¦¬í„´
 		return fishList;
 	}
 }

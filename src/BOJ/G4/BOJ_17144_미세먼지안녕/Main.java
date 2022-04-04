@@ -1,4 +1,4 @@
-package BOJ.G4.BOJ_17144_¹Ì¼¼¸ÕÁö¾È³ç;
+package BOJ.G4.BOJ_17144_ë¯¸ì„¸ë¨¼ì§€ì•ˆë…•;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -36,7 +36,7 @@ public class Main {
 		}
 		
 		for (int t=0;t<T;t++) {
-			//¹Ì¼¼¸ÕÁö È®»ê ½ÃÅ°±â
+			//ë¯¸ì„¸ë¨¼ì§€ í™•ì‚° ì‹œí‚¤ê¸°
 			map2 = new int[R][C];
 			for (int x=0;x<R;x++) {
 				for (int y=0;y<C;y++) {
@@ -48,7 +48,7 @@ public class Main {
 							int nx = x + dx[i];
 							int ny = y + dy[i];
 							
-							//°¢ ¹æÇâ¿¡ ´ëÇØ È®»êÀÌ °¡´ÉÇÏ¸é ÁÖº¯¿¡ ¸ÕÁö 5ºĞÀÇ 1¸¸Å­ »Ñ¸®°í, ¿·¿¡ ÀÖ´Â ¸ÕÁö 5ºĞÀÇ 1 ¹Ş±â
+							//ê° ë°©í–¥ì— ëŒ€í•´ í™•ì‚°ì´ ê°€ëŠ¥í•˜ë©´ ì£¼ë³€ì— ë¨¼ì§€ 5ë¶„ì˜ 1ë§Œí¼ ë¿Œë¦¬ê³ , ì˜†ì— ìˆëŠ” ë¨¼ì§€ 5ë¶„ì˜ 1 ë°›ê¸°
 							if (nx>=0&&nx<R&&ny>=0&&ny<C&&map[nx][ny]!=-1) {
 								sideDust += (map[nx][ny] / 5);
 								curDust -= curDustPiece;
@@ -60,54 +60,54 @@ public class Main {
 				}
 			}
 			
-			//¹Ì¼¼¸ÕÁö ÀÌµ¿ ½ÃÅ°±â
-			//Ã»Á¤±â »óºÎ
+			//ë¯¸ì„¸ë¨¼ì§€ ì´ë™ ì‹œí‚¤ê¸°
+			//ì²­ì •ê¸° ìƒë¶€
 			int[] up = dyson.get(0);
 			int x = up[0];
 			int y = up[1];
-			//ÁÂ
+			//ì¢Œ
 			for (int i=x;i>0;i--) {
 				map2[i][0] = map2[i-1][0];
 			}
-			//»ó
+			//ìƒ
 			for (int i=0;i<C-1;i++) {
 				map2[0][i] = map2[0][i+1];
 			}
-			//¿ì
+			//ìš°
 			for (int i=0;i<x;i++) {
 				map2[i][C-1] = map2[i+1][C-1];
 			}
-			//ÇÏ
+			//í•˜
 			for (int i=C-1;i>0;i--) {
 				map2[x][i] = map2[x][i-1];
 			}
 			map2[x][y] = -1;
 			map2[x][y+1] = 0;
 			
-			//Ã»Á¤±â ÇÏºÎ
+			//ì²­ì •ê¸° í•˜ë¶€
 			int[] down = dyson.get(1);
 			x = down[0];
 			y = down[1];
-			//ÁÂ
+			//ì¢Œ
 			for (int i=x;i<R-1;i++) {
 				map2[i][0] = map2[i+1][0];
 			}
-			//ÇÏ
+			//í•˜
 			for (int i=0;i<C-1;i++) {
 				map2[R-1][i] = map2[R-1][i+1];
 			}
-			//¿ì
+			//ìš°
 			for (int i=R-1;i>x;i--) {
 				map2[i][C-1] = map2[i-1][C-1];
 			}
-			//»ó
+			//ìƒ
 			for (int i=C-1;i>0;i--) {
 				map2[x][i] = map2[x][i-1];
 			}
 			map2[x][y] = -1;
 			map2[x][y+1] = 0;
 			
-			//¹İº¹ Ready
+			//ë°˜ë³µ Ready
 			map = map2;
 //			for (int i=0;i<R;i++) {
 //				map[i] = Arrays.copyOf(map2[i], map2[i].length);
@@ -119,7 +119,7 @@ public class Main {
 			
 		}
 		
-		//¸ÕÁö ¼ö °è»êÇÏ±â
+		//ë¨¼ì§€ ìˆ˜ ê³„ì‚°í•˜ê¸°
 		int total = 0;
 		for (int i=0;i<R;i++) {
 			for (int j=0;j<C;j++) {

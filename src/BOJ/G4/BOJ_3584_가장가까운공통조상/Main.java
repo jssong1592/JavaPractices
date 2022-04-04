@@ -1,4 +1,4 @@
-package BOJ.G4.BOJ_3584_°¡Àå°¡±î¿î°øÅëÁ¶»ó;
+package BOJ.G4.BOJ_3584_ê°€ì¥ê°€ê¹Œìš´ê³µí†µì¡°ìƒ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

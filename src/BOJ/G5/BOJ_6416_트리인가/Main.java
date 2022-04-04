@@ -1,4 +1,4 @@
-package BOJ.G5.BOJ_6416_Æ®¸®ÀÎ°¡;
+package BOJ.G5.BOJ_6416_íŠ¸ë¦¬ì¸ê°€;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,18 +18,18 @@ public class Main {
 		HashSet<Integer> nodes = new HashSet<>();
 		HashSet<int[]> edges = new HashSet<>();
 		while(true) {
-			//ÁÙ ÀĞ±â
+			//ì¤„ ì½ê¸°
 			String line = br.readLine();
 			
 			String[] st = line.split("  ");
 			
 			for (String edge:st) {
-				if (edge.equals("0 0")) {//ÄÉÀÌ½º ÇÏ³ª°¡ ³¡³µÀ¸¹Ç·Î °á°ú Ã³¸® ÈÄ ÇÃ·¡±× ÃÊ±âÈ­
+				if (edge.equals("0 0")) {//ì¼€ì´ìŠ¤ í•˜ë‚˜ê°€ ëë‚¬ìœ¼ë¯€ë¡œ ê²°ê³¼ ì²˜ë¦¬ í›„ í”Œë˜ê·¸ ì´ˆê¸°í™”
 					if (nodes.size()==0||(flag&&countRoot(nodes,parentOf)==1&&nodes.size()-edges.size()==1))
 						System.out.println("Case "+(tc)+" is a tree.");
 					else System.out.println("Case "+(tc)+" is not a tree.");
 					
-					//ÄÉÀÌ½º ÃÊ±âÈ­ÇÏ°í ´ÙÀ½ ÁÙ ÀĞ°í ³Ñ¾î°¡±â
+					//ì¼€ì´ìŠ¤ ì´ˆê¸°í™”í•˜ê³  ë‹¤ìŒ ì¤„ ì½ê³  ë„˜ì–´ê°€ê¸°
 					tc++;
 					
 					flag = true;
@@ -49,11 +49,11 @@ public class Main {
 					nodes.add(child);
 					edges.add(new int[] {parent,child});
 					
-					// ¼öÁ¤) Æ®¸®ÀÏ °æ¿ì
-					// ¡Ú. ³ëµå°¡ ¾ø¾îµµ Æ®¸®´Ù
-					// 1. ·çÆ®°¡ ³ëµå°¡ ÇÏ³ª
-					// 2. Á¤Á¡ °¹¼ö - °£¼± °¹¼ö == 1
-					// 3. µé¾î¿À´Â °£¼±ÀÇ °¹¼ö°¡ 2 ÀÌ»óÀÎ ³ëµå°¡ ÀÖ´ÂÁö(childÀÇ ºÎ¸ğ°¡ ÀÌ¹Ì Á¸Àç)
+					// ìˆ˜ì •) íŠ¸ë¦¬ì¼ ê²½ìš°
+					// â˜…. ë…¸ë“œê°€ ì—†ì–´ë„ íŠ¸ë¦¬ë‹¤
+					// 1. ë£¨íŠ¸ê°€ ë…¸ë“œê°€ í•˜ë‚˜
+					// 2. ì •ì  ê°¯ìˆ˜ - ê°„ì„  ê°¯ìˆ˜ == 1
+					// 3. ë“¤ì–´ì˜¤ëŠ” ê°„ì„ ì˜ ê°¯ìˆ˜ê°€ 2 ì´ìƒì¸ ë…¸ë“œê°€ ìˆëŠ”ì§€(childì˜ ë¶€ëª¨ê°€ ì´ë¯¸ ì¡´ì¬)
 					if (parent==child||parentOf.get(child)!=null) {
 						flag = false;
 					} else {
@@ -62,7 +62,7 @@ public class Main {
 				}
 			}
 			
-			//ÄÉÀÌ½º ³¡³»°í ÀĞÀº ´ÙÀ½ ÁÙÀÌ -1 -1ÀÌ¸é ¿ÏÀüÈ÷ ³¡³»±â
+			//ì¼€ì´ìŠ¤ ëë‚´ê³  ì½ì€ ë‹¤ìŒ ì¤„ì´ -1 -1ì´ë©´ ì™„ì „íˆ ëë‚´ê¸°
 			if (line.equals("-1 -1")) return;
 			
 		}

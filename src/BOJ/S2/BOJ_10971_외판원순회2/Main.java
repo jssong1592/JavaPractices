@@ -1,4 +1,4 @@
-package BOJ.S2.BOJ_10971_¿ÜÆÇ¿ø¼øÈ¸2;
+package BOJ.S2.BOJ_10971_ì™¸íŒì›ìˆœíšŒ2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

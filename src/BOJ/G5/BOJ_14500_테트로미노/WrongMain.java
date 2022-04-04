@@ -1,4 +1,4 @@
-package BOJ.G5.BOJ_14500_��Ʈ�ι̳�;
+package BOJ.G5.BOJ_14500_테트로미노;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

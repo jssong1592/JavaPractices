@@ -1,4 +1,4 @@
-package BOJ.B2.BOJ_3040_¹é¼³°øÁÖ¿ÍÀÏ°ö³­ÀïÀÌ;
+package BOJ.B2.BOJ_3040_ë°±ì„¤ê³µì£¼ì™€ì¼ê³±ë‚œìŸì´;
 
 import java.util.ArrayList;
 import java.util.Scanner;

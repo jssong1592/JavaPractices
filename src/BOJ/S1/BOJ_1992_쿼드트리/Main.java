@@ -1,4 +1,4 @@
-package BOJ.S1.BOJ_1992_ÄõµåÆ®¸®;
+package BOJ.S1.BOJ_1992_ì¿¼ë“œíŠ¸ë¦¬;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -13,7 +13,7 @@ public class Main {
 		
 		map = new int[N][N];
 		
-		//N*N ¹è¿­ map¿¡ ÀÔ·Â µ¥ÀÌÅÍ ÀúÀå
+		//N*N ë°°ì—´ mapì— ì…ë ¥ ë°ì´í„° ì €ì¥
 		for (int i=0;i<N;i++) {
 			String s = br.readLine();
 			for (int j=0;j<N;j++) {
@@ -25,13 +25,13 @@ public class Main {
 	}
 	
 	static String quad(int N, int startX, int startY) {
-		// Å©±â°¡ 1ÀÌ¸é ÇØ´ç ÁÂÇ¥ÀÇ ¼ıÀÚ ±×´ë·Î ½ºÆ®¸µÀ¸·Î º¯È¯ÇÏ¿© ¹İÈ¯
+		// í¬ê¸°ê°€ 1ì´ë©´ í•´ë‹¹ ì¢Œí‘œì˜ ìˆ«ì ê·¸ëŒ€ë¡œ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë³€í™˜í•˜ì—¬ ë°˜í™˜
 		if (N==1) return String.valueOf(map[startX][startY]);
 		
-		// Å©±â°¡ 1º¸´Ù Å©¸é 4ºĞ¸éÀ¸·Î ³ª´² (xxxx) Çü½ÄÀ» ¹İÈ¯ÇÏµµ·Ï StringBuilder·Î ¹®ÀÚ¿­ »ı¼º
+		// í¬ê¸°ê°€ 1ë³´ë‹¤ í¬ë©´ 4ë¶„ë©´ìœ¼ë¡œ ë‚˜ëˆ  (xxxx) í˜•ì‹ì„ ë°˜í™˜í•˜ë„ë¡ StringBuilderë¡œ ë¬¸ìì—´ ìƒì„±
 		StringBuilder sb = new StringBuilder();
 		
-		// °¢ 4ºĞ¸éÀÇ map¿¡¼­ÀÇ À§Ä¡¸¦ °¡·Î¼¼·Î ÀÎµ¦½º¿¡ N/2¸¦ ´õÇÏ¸é¼­ ¼³Á¤ÇÏ°í, Å©±â¸¦ 2·Î ³ª´®
+		// ê° 4ë¶„ë©´ì˜ mapì—ì„œì˜ ìœ„ì¹˜ë¥¼ ê°€ë¡œì„¸ë¡œ ì¸ë±ìŠ¤ì— N/2ë¥¼ ë”í•˜ë©´ì„œ ì„¤ì •í•˜ê³ , í¬ê¸°ë¥¼ 2ë¡œ ë‚˜ëˆ”
 		sb.append("(")
 		.append(quad(N/2,startX,startY))
 		.append(quad(N/2,startX,startY+N/2))
@@ -41,7 +41,7 @@ public class Main {
 		
 		String s = sb.toString();
 		
-		// ¾ĞÃàÀÌ °¡´ÉÇÏ¸é ¾ĞÃà
+		// ì••ì¶•ì´ ê°€ëŠ¥í•˜ë©´ ì••ì¶•
 		if (s.equals("(1111)")) s = "1";
 		else if (s.equals("(0000)")) s = "0";
 		

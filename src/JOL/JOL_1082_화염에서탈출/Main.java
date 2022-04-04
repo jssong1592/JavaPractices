@@ -1,4 +1,4 @@
-package JOL.JOL_1082_È­¿°¿¡¼­Å»Ãâ;
+package JOL.JOL_1082_í™”ì—¼ì—ì„œíƒˆì¶œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

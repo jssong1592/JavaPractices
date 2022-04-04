@@ -1,4 +1,4 @@
-package BOJ.G3.BOJ_1600_¸»ÀÌµÇ°íÇÂ¿ø¼şÀÌ;
+package BOJ.G3.BOJ_1600_ë§ì´ë˜ê³ í”ˆì›ìˆ­ì´;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -31,7 +31,7 @@ public class Main {
 		h = Integer.parseInt(st.nextToken());
 		
 		map = new int[h][w];
-		//k¹ø Á¡ÇÁ±îÁö °¡´ÉÇÏ´Ï k°³ Â÷¿ø¿¡ ¹æ¹®¿¡ °É¸° È½¼ö¸¦ °¢°¢ ÀúÀå
+		//kë²ˆ ì í”„ê¹Œì§€ ê°€ëŠ¥í•˜ë‹ˆ kê°œ ì°¨ì›ì— ë°©ë¬¸ì— ê±¸ë¦° íšŸìˆ˜ë¥¼ ê°ê° ì €ì¥
 		visited = new int[h][w][k+1];
 		
 		for (int i=0;i<h;i++) {
@@ -76,7 +76,7 @@ public class Main {
 				return visited[cur.x][cur.y][cur.k];
 			}
 			
-			//¸» Á¡ÇÁ¸¦ ¾ÈÇßÀ» °æ¿ì k º¸Á¸
+			//ë§ ì í”„ë¥¼ ì•ˆí–ˆì„ ê²½ìš° k ë³´ì¡´
 			for (int i=0;i<4;i++) {
 				
 				int nx = cur.x + monkeyDx[i];
@@ -88,15 +88,15 @@ public class Main {
 				}
 			}
 			
-			//Á¡ÇÁ°¡ °¡´ÉÇÒ °æ¿ì
+			//ì í”„ê°€ ê°€ëŠ¥í•  ê²½ìš°
 			if (cur.k>0) {
 				for (int i=0;i<8;i++) {
 					int nx = cur.x + horseDx[i];
 					int ny = cur.y + horseDy[i];
 					
-					//Á¡ÇÁÇÑ Â÷¿øÀÇ ¹æ¹®È½¼ö Áõ°¡
+					//ì í”„í•œ ì°¨ì›ì˜ ë°©ë¬¸íšŸìˆ˜ ì¦ê°€
 					if (isIn(nx,ny)&&map[nx][ny]==0&&visited[nx][ny][cur.k-1]==0) {
-						//Á¡ÇÁ ±â·ÏÇÏ±â À§ÇØ kÂ÷°¨
+						//ì í”„ ê¸°ë¡í•˜ê¸° ìœ„í•´ kì°¨ê°
 						q.offer(new Point(nx,ny,(cur.k)-1));
 						visited[nx][ny][cur.k-1] = visited[cur.x][cur.y][cur.k] + 1;
 					}

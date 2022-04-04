@@ -1,4 +1,4 @@
-package SWEA.D4.SWEA_3124_ÃÖ¼Ò½ºÆĞ´×Æ®¸®;
+package SWEA.D4.SWEA_3124_ìµœì†ŒìŠ¤íŒ¨ë‹íŠ¸ë¦¬;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

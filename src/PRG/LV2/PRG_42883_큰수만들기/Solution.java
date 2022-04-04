@@ -1,4 +1,4 @@
-package PRG.LV2.PRG_42883_Å«¼ö¸¸µé±â;
+package PRG.LV2.PRG_42883_í°ìˆ˜ë§Œë“¤ê¸°;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -6,7 +6,7 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 
-//Å« ¼ö ¸¸µé±â
+//í° ìˆ˜ ë§Œë“¤ê¸°
 //https://programmers.co.kr/learn/courses/30/lessons/42883
 
 public class Solution {

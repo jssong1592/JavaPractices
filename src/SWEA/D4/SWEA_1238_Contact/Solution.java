@@ -34,7 +34,7 @@ public class Solution {
 			
 			//BFS
 			Queue<int[]> q = new LinkedList<>();
-			//½ÃÀÛ ³ëµå·ÎºÎÅÍ ÀÌµ¿ÇÑ °Å¸®¸¦ ¹è¿­ÀÇ 2¹øÂ° ¿ø¼Ò·Î ÀúÀåÇÔ
+			//ì‹œì‘ ë…¸ë“œë¡œë¶€í„° ì´ë™í•œ ê±°ë¦¬ë¥¼ ë°°ì—´ì˜ 2ë²ˆì§¸ ì›ì†Œë¡œ ì €ì¥í•¨
 			q.offer(new int[] {start,0});
 			visited[start] = true;
 			
@@ -42,9 +42,9 @@ public class Solution {
 			
 			while (!q.isEmpty()) {
 				int[] node = q.poll();
-				//²¨³½ ³ëµå°¡ ÇöÀç Max ³ëµåº¸´Ù ¸Ö¸® °¬´Ù¸é ¹«Á¶°Ç ÇØ´ç ³ëµå·Î Max ±³Ã¼
+				//êº¼ë‚¸ ë…¸ë“œê°€ í˜„ì¬ Max ë…¸ë“œë³´ë‹¤ ë©€ë¦¬ ê°”ë‹¤ë©´ ë¬´ì¡°ê±´ í•´ë‹¹ ë…¸ë“œë¡œ Max êµì²´
 				if (node[1]>maxResult[1]) maxResult = node;
-				//°°Àº °Å¸®¶ó¸é ³ëµå ¹øÈ£¸¦ ºñ±³ÇÏ¿© °áÁ¤
+				//ê°™ì€ ê±°ë¦¬ë¼ë©´ ë…¸ë“œ ë²ˆí˜¸ë¥¼ ë¹„êµí•˜ì—¬ ê²°ì •
 				else maxResult = maxResult[0]<=node[0]?node:maxResult;
 				
 				for (Integer i:list[node[0]]) {

@@ -1,4 +1,4 @@
-package BOJ.G5.BOJ_2075_N¹øÂ°Å«¼ö;
+package BOJ.G5.BOJ_2075_Në²ˆì§¸í°ìˆ˜;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class Main {
 	
-	static int findMaxStack(Stack<Integer>[] table) { // ÇöÀç °¡Àå Å« ¼ö°¡ ÀÖ´Â ÀÎµ¦½º Ã£±â
+	static int findMaxStack(Stack<Integer>[] table) { // í˜„ì¬ ê°€ì¥ í° ìˆ˜ê°€ ìˆëŠ” ì¸ë±ìŠ¤ ì°¾ê¸°
 		int max = Integer.MIN_VALUE;
 		int maxIdx = Integer.MIN_VALUE;
 		for (int i=0;i<table.length;i++) {
@@ -39,7 +39,7 @@ public class Main {
 			}
 		}
 		
-		for (int i=0;i<N-1;i++) { // N-1¹ø popÇØ¼­ N¹øÂ° Å« ¼ö±îÁö Ã£¾Æ³»±â
+		for (int i=0;i<N-1;i++) { // N-1ë²ˆ popí•´ì„œ Në²ˆì§¸ í° ìˆ˜ê¹Œì§€ ì°¾ì•„ë‚´ê¸°
 			int idx = findMaxStack(table);
 			table[idx].pop();
 		}

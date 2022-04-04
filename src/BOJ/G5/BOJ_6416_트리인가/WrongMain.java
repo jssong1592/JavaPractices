@@ -1,4 +1,4 @@
-package BOJ.G5.BOJ_6416_Æ®¸®ÀÎ°¡;
+package BOJ.G5.BOJ_6416_íŠ¸ë¦¬ì¸ê°€;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,17 +16,17 @@ public class WrongMain {
 		HashMap<Integer,Integer> parentOf = new HashMap<>();
 		
 		while(true) {
-			//ÁÙ ÀĞ±â
+			//ì¤„ ì½ê¸°
 			String line = br.readLine();
 			
 			String[] st = line.split("  ");
 			
 			for (String vertex:st) {
-				if (vertex.equals("0 0")) {//ÄÉÀÌ½º ÇÏ³ª°¡ ³¡³µÀ¸¹Ç·Î °á°ú Ã³¸® ÈÄ ÇÃ·¡±× ÃÊ±âÈ­
+				if (vertex.equals("0 0")) {//ì¼€ì´ìŠ¤ í•˜ë‚˜ê°€ ëë‚¬ìœ¼ë¯€ë¡œ ê²°ê³¼ ì²˜ë¦¬ í›„ í”Œë˜ê·¸ ì´ˆê¸°í™”
 					if (parentOf.size()==0||(flag&&countRoot(parentOf)==1))System.out.println("Case "+(tc)+" is a tree.");
 					else System.out.println("Case "+(tc)+" is not a tree.");
 					
-					//ÄÉÀÌ½º ÃÊ±âÈ­ÇÏ°í ´ÙÀ½ ÁÙ ÀĞ°í ³Ñ¾î°¡±â
+					//ì¼€ì´ìŠ¤ ì´ˆê¸°í™”í•˜ê³  ë‹¤ìŒ ì¤„ ì½ê³  ë„˜ì–´ê°€ê¸°
 					tc++;
 					parentOf = new HashMap<>();
 					line = br.readLine();
@@ -37,11 +37,11 @@ public class WrongMain {
 					StringTokenizer st2 = new StringTokenizer(vertex);
 					int parent = Integer.parseInt(st2.nextToken());
 					int child = Integer.parseInt(st2.nextToken());
-					// Æ®¸®°¡ ¾Æ´Ñ °æ¿ì
-					// 1. parent¿Í child°¡ °°À» ¶§
-					// 2. childÀÇ ºÎ¸ğ°¡ ÀÌ¹Ì Á¸ÀçÇÒ ¶§
-					// 3. ³ëµå°¡ ¼øÈ¯ÇÒ ¶§(Á¶»óÀ» ÀÚ½ÄÀ¸·Î ¸¸µå·Á°í ÇÒ ¶§)
-					// 4. ·çÆ® ³ëµå°¡ 2°³ ÀÌ»óÀÏ ¶§
+					// íŠ¸ë¦¬ê°€ ì•„ë‹Œ ê²½ìš°
+					// 1. parentì™€ childê°€ ê°™ì„ ë•Œ
+					// 2. childì˜ ë¶€ëª¨ê°€ ì´ë¯¸ ì¡´ì¬í•  ë•Œ
+					// 3. ë…¸ë“œê°€ ìˆœí™˜í•  ë•Œ(ì¡°ìƒì„ ìì‹ìœ¼ë¡œ ë§Œë“œë ¤ê³  í•  ë•Œ)
+					// 4. ë£¨íŠ¸ ë…¸ë“œê°€ 2ê°œ ì´ìƒì¼ ë•Œ
 					if (parent==child||parentOf.get(child)!=null||isAncestor(child,parent,parentOf)) {
 						flag = false;
 					} else {
@@ -50,7 +50,7 @@ public class WrongMain {
 				}
 			}
 			
-			//ÄÉÀÌ½º ³¡³»°í ÀĞÀº ´ÙÀ½ ÁÙÀÌ -1 -1ÀÌ¸é ¿ÏÀüÈ÷ ³¡³»±â
+			//ì¼€ì´ìŠ¤ ëë‚´ê³  ì½ì€ ë‹¤ìŒ ì¤„ì´ -1 -1ì´ë©´ ì™„ì „íˆ ëë‚´ê¸°
 			if (line.equals("-1 -1")) break;
 			
 		}

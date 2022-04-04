@@ -1,4 +1,4 @@
-package BOJ.G4.BOJ_11404_ÇÃ·ÎÀÌµå;
+package BOJ.G4.BOJ_11404_í”Œë¡œì´ë“œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -30,7 +30,7 @@ public class Main {
 			
 		}
 		
-		//¸ğµç ³ëµå¿¡ ´ëÇÏ¿©, ³ëµå a,b¸¦ ÀÕ´Â ±âÁ¸ °æ·Î°¡ ÇÑ ³ëµå k¸¦ °ÅÃÄ¼­ °¡´Â °æ·Îº¸´Ù ÂªÀºÁö È®ÀÎ-> dist[a][b] = min(dist[a][b], dist[a][k]+dist[k][b])
+		//ëª¨ë“  ë…¸ë“œì— ëŒ€í•˜ì—¬, ë…¸ë“œ a,bë¥¼ ì‡ëŠ” ê¸°ì¡´ ê²½ë¡œê°€ í•œ ë…¸ë“œ kë¥¼ ê±°ì³ì„œ ê°€ëŠ” ê²½ë¡œë³´ë‹¤ ì§§ì€ì§€ í™•ì¸-> dist[a][b] = min(dist[a][b], dist[a][k]+dist[k][b])
 		for (int k=1;k<n+1;k++) {
 			for (int a=1;a<n+1;a++) {
 				for (int b=1;b<n+1;b++) {

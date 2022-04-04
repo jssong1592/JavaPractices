@@ -1,4 +1,4 @@
-package SWEA.D4.SWEA_1251_ÇÏ³ª·Î;
+package SWEA.D4.SWEA_1251_í•˜ë‚˜ë¡œ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -53,14 +53,14 @@ public class Solution {
 			
 			E = Double.parseDouble(br.readLine());
 			
-			//¼¶ Á¶ÇÕ¿¡ µû¶ó ÅÍ³Î °´Ã¼ ¸¸µé¾î¼­ °Å¸® ÀûÀº ¼ø¼­´ë·Î µé¾î°¡µµ·Ï ¿ì¼±¼øÀ§ Å¥¿¡ »ğÀÔ
+			//ì„¬ ì¡°í•©ì— ë”°ë¼ í„°ë„ ê°ì²´ ë§Œë“¤ì–´ì„œ ê±°ë¦¬ ì ì€ ìˆœì„œëŒ€ë¡œ ë“¤ì–´ê°€ë„ë¡ ìš°ì„ ìˆœìœ„ íì— ì‚½ì…
 			for (int i=0;i<N-1;i++) {
 				for (int j=i+1;j<N;j++) {
 					pq.offer(new Tunnel(i,j));
 				}
 			}
 			
-			//Å©·ç½ºÄ® ¾Ë°í¸®Áò »ç¿ë
+			//í¬ë£¨ìŠ¤ì¹¼ ì•Œê³ ë¦¬ì¦˜ ì‚¬ìš©
 			parent = new int[N+1];
 			for (int i=0;i<N+1;i++) {
 				parent[i] = i;

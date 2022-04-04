@@ -1,4 +1,4 @@
-package BOJ.G1.BOJ_1194_´ÞÀÌÂ÷¿À¸¥´Ù°¡ÀÚ;
+package BOJ.G1.BOJ_1194_ë‹¬ì´ì°¨ì˜¤ë¥¸ë‹¤ê°€ìž;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -73,7 +73,7 @@ public class Main {
             int step = cur.step;
             int key = cur.key;
 
-            //²¨³½ Æ÷ÀÎÆ®°¡ µµÂøÁöÁ¡ÀÏ ¶§
+            //êº¼ë‚¸ í¬ì¸íŠ¸ê°€ ë„ì°©ì§€ì ì¼ ë•Œ
             if (map[x][y]=='1') {
                 return step;
             }
@@ -87,9 +87,9 @@ public class Main {
                         visited[key][nx][ny] = true;
                         q.offer(new Point(nx, ny, step + 1,key));
                     }
-                    //´ÙÀ½ À§Ä¡°¡ ¿­¼è¶ó¸é
-                    //**µÇµ¹¾Æ°¡´Â °æ¿ì¶ó´Â °ÍÀº ¿­¼è¸¦ ¸Ô¾úÀ» °æ¿ì¹Û¿¡ ¾øÀ½.
-                    //±×·¯¹Ç·Î ¿­¼è¸¦ ¸ÔÀ¸¸é(¿­¼èÁ¤º¸°¡ ¹Ù²î¸é) newKey Â÷¿øÀ¸·Î ÀÌµ¿ÇÏ¿© µÇµ¹¾Æ°¥ ¼ö ÀÖ´Â visited ±â·Ï
+                    //ë‹¤ìŒ ìœ„ì¹˜ê°€ ì—´ì‡ ë¼ë©´
+                    //**ë˜ëŒì•„ê°€ëŠ” ê²½ìš°ë¼ëŠ” ê²ƒì€ ì—´ì‡ ë¥¼ ë¨¹ì—ˆì„ ê²½ìš°ë°–ì— ì—†ìŒ.
+                    //ê·¸ëŸ¬ë¯€ë¡œ ì—´ì‡ ë¥¼ ë¨¹ìœ¼ë©´(ì—´ì‡ ì •ë³´ê°€ ë°”ë€Œë©´) newKey ì°¨ì›ìœ¼ë¡œ ì´ë™í•˜ì—¬ ë˜ëŒì•„ê°ˆ ìˆ˜ ìžˆëŠ” visited ê¸°ë¡
                     else if (map[nx][ny]>='a'&&map[nx][ny]<='f') {
                         int newKey = 1<<(map[nx][ny]-'a');
                         newKey = key | newKey;
@@ -100,7 +100,7 @@ public class Main {
                             q.offer(new Point(nx,ny,step+1,newKey));
                         }
                     }
-                    //´ÙÀ½ À§Ä¡°¡ ¹®ÀÌ¶ó¸é
+                    //ë‹¤ìŒ ìœ„ì¹˜ê°€ ë¬¸ì´ë¼ë©´
                     else if (map[nx][ny]>='A'&&map[nx][ny]<='F') {
                         int door = 1 << (map[nx][ny]-'A');
                         if ((key&door)>0) {

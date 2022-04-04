@@ -1,4 +1,4 @@
-package SWEA.D3.SWEA_1228_¾ÏÈ£¹®1;
+package SWEA.D3.SWEA_1228_ì•”í˜¸ë¬¸1;
 
 import java.util.LinkedList;
 import java.util.Scanner;

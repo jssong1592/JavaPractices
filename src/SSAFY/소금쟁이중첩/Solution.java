@@ -1,4 +1,4 @@
-package SSAFY.¼Ò±İÀïÀÌÁßÃ¸;
+package SSAFY.ì†Œê¸ˆìŸì´ì¤‘ì²©;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -27,10 +27,10 @@ public class Solution {
 				int y = Integer.parseInt(st.nextToken());
 				int dir = Integer.parseInt(st.nextToken());
 				
-				bugPos[i] = new int[] {x,y,dir}; //1¹ø ¼Ò±İÀïÀÌºÎÅÍ À§Ä¡¿Í ¹æÇâÀ» bugPos¹è¿­¿¡ ÀúÀå
+				bugPos[i] = new int[] {x,y,dir}; //1ë²ˆ ì†Œê¸ˆìŸì´ë¶€í„° ìœ„ì¹˜ì™€ ë°©í–¥ì„ bugPosë°°ì—´ì— ì €ì¥
 			}
 			
-			outer:for (int i=0;i<bugNum;i++) { //1¹ø ¼Ò±İÀïÀÌºÎÅÍ ½ÃÀÛ
+			outer:for (int i=0;i<bugNum;i++) { //1ë²ˆ ì†Œê¸ˆìŸì´ë¶€í„° ì‹œì‘
 				int x = bugPos[i][0];
 				int y = bugPos[i][1];
 				int dir = bugPos[i][2];
@@ -38,23 +38,23 @@ public class Solution {
 				
 				inner:for (int cnt=3;cnt>0;cnt--) {
 					 
-					switch (dir) { // ¹æÇâ ¼³Á¤
+					switch (dir) { // ë°©í–¥ ì„¤ì •
 					case 1:
-						x += cnt; // ¶Ù±â È½¼ö¿¡ µû¶ó °Å¸® ¼³Á¤
+						x += cnt; // ë›°ê¸° íšŸìˆ˜ì— ë”°ë¼ ê±°ë¦¬ ì„¤ì •
 						break;
 					case 2:
 						y += cnt;
 						break;
 					}
-					if (x<N&&y<N) { // µµÂøÇÒ À§Ä¡°¡ ¿¬¸ø ³»ºÎ¿¡ ÀÖ´Ù¸é
-						if(!map[x][y]) { // µµÂøÇÑ À§Ä¡¿¡ ¾Æ¹«µµ ¸¶Å·À» ¾ÈÇß´Ù¸é
-							map[x][y] = true; // µµÂøÇÑ À§Ä¡¸¦ true·Î ¸¶Å· 
+					if (x<N&&y<N) { // ë„ì°©í•  ìœ„ì¹˜ê°€ ì—°ëª» ë‚´ë¶€ì— ìˆë‹¤ë©´
+						if(!map[x][y]) { // ë„ì°©í•œ ìœ„ì¹˜ì— ì•„ë¬´ë„ ë§ˆí‚¹ì„ ì•ˆí–ˆë‹¤ë©´
+							map[x][y] = true; // ë„ì°©í•œ ìœ„ì¹˜ë¥¼ trueë¡œ ë§ˆí‚¹ 
 							continue;
-						} else { // µµÂøÇÑ À§Ä¡°¡ ´©±º°¡°¡ ÀÌ¹Ì ¸¶Å·ÇÑ À§Ä¡¶ó¸é ÇØ´ç ¼Ò±İÀïÀÌÀÇ ¹øÈ£ ÀúÀåÇÏ°í ¿ÏÀüÈ÷ Áß´Ü
+						} else { // ë„ì°©í•œ ìœ„ì¹˜ê°€ ëˆ„êµ°ê°€ê°€ ì´ë¯¸ ë§ˆí‚¹í•œ ìœ„ì¹˜ë¼ë©´ í•´ë‹¹ ì†Œê¸ˆìŸì´ì˜ ë²ˆí˜¸ ì €ì¥í•˜ê³  ì™„ì „íˆ ì¤‘ë‹¨
 							ans = i+1;
 							break outer;
 						}
-					} else { // ¶Ù¾î¼­ ¿¬¸ø ¹Ù±ùÀ¸·Î ºüÁ®³ª°£´Ù¸é ¶Ù±â Áß´Ü
+					} else { // ë›°ì–´ì„œ ì—°ëª» ë°”ê¹¥ìœ¼ë¡œ ë¹ ì ¸ë‚˜ê°„ë‹¤ë©´ ë›°ê¸° ì¤‘ë‹¨
 						break inner;
 					}
 				}

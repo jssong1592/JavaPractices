@@ -1,4 +1,4 @@
-package BOJ.G5.BOJ_2493_Å¾;
+package BOJ.G5.BOJ_2493_íƒ‘;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -21,14 +21,14 @@ public class Main {
 			if(stack.isEmpty()) sb.append("0 ");
 			
 			else {
-				while(!stack.isEmpty()&&stack.peek()[1]<T) //½ºÅÃÀÌ ºñ°Å³ª, ÇöÀç Å¾ ³ôÀÌ°¡ ½ºÅÃÀÇ ¸Ç À­ ºÎºÐ Å¾ ³ôÀÌº¸´Ù ³·À» ¶§±îÁö °è¼Ó pop
+				while(!stack.isEmpty()&&stack.peek()[1]<T) //ìŠ¤íƒì´ ë¹„ê±°ë‚˜, í˜„ìž¬ íƒ‘ ë†’ì´ê°€ ìŠ¤íƒì˜ ë§¨ ìœ— ë¶€ë¶„ íƒ‘ ë†’ì´ë³´ë‹¤ ë‚®ì„ ë•Œê¹Œì§€ ê³„ì† pop
 					stack.pop();
 				
-				if (stack.isEmpty()) sb.append("0 "); // ´Ù popÇÏ°í ½ºÅÃÀÌ ºñ¾îÀÖÀ¸¸é 0
-				else sb.append(stack.peek()[0]+" "); // ½ºÅÃÀÌ ¾È ºñ¾îÀÖÀ¸¸é(½ÅÈ£¸¦ ¹ÞÀº Å¾ÀÌ ½ºÅÃÀÇ ¸Ç À­ ºÎºÐ¿¡ ÀÖÀ½) Å¾ÀÇ ¹øÈ£ ±â·Ï
+				if (stack.isEmpty()) sb.append("0 "); // ë‹¤ popí•˜ê³  ìŠ¤íƒì´ ë¹„ì–´ìžˆìœ¼ë©´ 0
+				else sb.append(stack.peek()[0]+" "); // ìŠ¤íƒì´ ì•ˆ ë¹„ì–´ìžˆìœ¼ë©´(ì‹ í˜¸ë¥¼ ë°›ì€ íƒ‘ì´ ìŠ¤íƒì˜ ë§¨ ìœ— ë¶€ë¶„ì— ìžˆìŒ) íƒ‘ì˜ ë²ˆí˜¸ ê¸°ë¡
 			}
 			
-			stack.push(new int[] {i+1,T}); // ÀÚ±â ÀÚ½ÅÀº push
+			stack.push(new int[] {i+1,T}); // ìžê¸° ìžì‹ ì€ push
 		}
 		System.out.println(sb);
 	}

@@ -1,4 +1,4 @@
-package BOJ.G4.BOJ_1987_¾ËÆÄºª;
+package BOJ.G4.BOJ_1987_ì•ŒíŒŒë²³;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -29,7 +29,7 @@ public class Main2 {
 		}
 		
 		
-		//½ÃÀÛ À§Ä¡¿¡¼­ dfs½ÃÀÛ
+		//ì‹œì‘ ìœ„ì¹˜ì—ì„œ dfsì‹œì‘
 		dfs(0,0,0);
 		
 		System.out.println(maxResult);
@@ -37,25 +37,25 @@ public class Main2 {
 	}
 	
 	static void dfs(int row, int col,int step) {
-		//Á¾·á Á¶°Ç
+		//ì¢…ë£Œ ì¡°ê±´
 		if (chars[map[row][col]]) {
 			maxResult = Math.max(maxResult, step);
 			return;
 		}
-		//4°¡Áö ¹æÇâ¿¡ ´ëÇÏ¿© dfs Å½»ö
+		//4ê°€ì§€ ë°©í–¥ì— ëŒ€í•˜ì—¬ dfs íƒìƒ‰
 		chars[map[row][col]] = true;
 		
 		for (int i=0;i<4;i++) {
 			int nx = row + dx[i];
 			int ny = col + dy[i];
-			// °¥ À§Ä¡°¡ ¹è¿­ ¹üÀ§¿¡ ÀÖ°í, ¹æ¹®ÇÑ ±â·ÏÀÌ ¾ø°í, ÇÑ¹øµµ ¹âÁö ¾ÊÀº ¾ËÆÄºªÀÏ ¶§
+			// ê°ˆ ìœ„ì¹˜ê°€ ë°°ì—´ ë²”ìœ„ì— ìˆê³ , ë°©ë¬¸í•œ ê¸°ë¡ì´ ì—†ê³ , í•œë²ˆë„ ë°Ÿì§€ ì•Šì€ ì•ŒíŒŒë²³ì¼ ë•Œ
 			if (nx>=0&&nx<R&&ny>=0&&ny<C) {
 				dfs(nx,ny,step+1);
 				
 
 			}
 		}
-		//´Ù¸¥ °æ·Î·Î Á¢±ÙÇßÀ» ¶§ Á¢±Ù °¡´ÉÇÏµµ·Ï ¹æ¹® ±â·Ï ÇØÁ¦
+		//ë‹¤ë¥¸ ê²½ë¡œë¡œ ì ‘ê·¼í–ˆì„ ë•Œ ì ‘ê·¼ ê°€ëŠ¥í•˜ë„ë¡ ë°©ë¬¸ ê¸°ë¡ í•´ì œ
 		chars[map[row][col]] = false;
 		
 	}

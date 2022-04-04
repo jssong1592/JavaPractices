@@ -1,4 +1,4 @@
-package BOJ.S1.BOJ_1149_RGB°Å¸®;
+package BOJ.S1.BOJ_1149_RGBê±°ë¦¬;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -24,7 +24,7 @@ public class Main {
 			cost[i][2] = B;
 		}
 		
-		//dp Å×ÀÌºí -> ¸¶Áö¸·(N)¹ø¤Š ÁýÀÌ R,G,B·Î Ä¥ÇØÁ³À» ¶§ÀÇ °¢°¢ ÃÖ¼Ò ºñ¿ë
+		//dp í…Œì´ë¸” -> ë§ˆì§€ë§‰(N)ë²ˆì¨° ì§‘ì´ R,G,Bë¡œ ì¹ í•´ì¡Œì„ ë•Œì˜ ê°ê° ìµœì†Œ ë¹„ìš©
 		int[][] dp = new int[N][3];
 		
 		dp[0][0] = cost[0][0];

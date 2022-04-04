@@ -1,4 +1,4 @@
-package BOJ.G5.BOJ_1753_�ִܰ��;
+package BOJ.G5.BOJ_1753_최단경로;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

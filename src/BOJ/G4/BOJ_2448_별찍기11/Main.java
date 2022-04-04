@@ -1,4 +1,4 @@
-package BOJ.G4.BOJ_2448_º°Âï±â11;
+package BOJ.G4.BOJ_2448_ë³„ì°ê¸°11;
 
 import java.io.BufferedReader;
 import java.io.StringReader;

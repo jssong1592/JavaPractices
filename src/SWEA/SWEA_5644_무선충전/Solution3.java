@@ -1,4 +1,4 @@
-package SWEA.SWEA_5644_¹«¼±ÃæÀü;
+package SWEA.SWEA_5644_ë¬´ì„ ì¶©ì „;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -36,13 +36,13 @@ public class Solution3 {
          
         for(int t = 1; t<=T; t++) {
             //(1,1) ~ (10,10)
-            //¹æÇâÁ¤º¸
+            //ë°©í–¥ì •ë³´
             int[] dx = {0,0,1,0,-1};
             int[] dy = {0,-1,0,1,0};
             StringTokenizer st = new StringTokenizer(br.readLine()," ");
             int m = Integer.parseInt(st.nextToken());
             int a = Integer.parseInt(st.nextToken());
-            // A B ÀÌµ¿Á¤º¸ ÃÊ±âÈ­, 0ÃÊºÎÅÍ ÃæÀüÀ§ÇØ +1
+            // A B ì´ë™ì •ë³´ ì´ˆê¸°í™”, 0ì´ˆë¶€í„° ì¶©ì „ìœ„í•´ +1
             moveA = new int[m+1];
             moveB = new int[m+1];
             st = new StringTokenizer(br.readLine()," ");
@@ -53,8 +53,8 @@ public class Solution3 {
             for(int i=1; i<=m; i++) {
                 moveB[i] = Integer.parseInt(st.nextToken());
             }
-            // AP Á¤º¸ ÃÊ±âÈ­
-            apList = new AP[a]; //1~a¹ø, x,y,c,p
+            // AP ì •ë³´ ì´ˆê¸°í™”
+            apList = new AP[a]; //1~aë²ˆ, x,y,c,p
             for(int i=0; i<a; i++) {
                 st = new StringTokenizer(br.readLine()," ");
                 int x = Integer.parseInt(st.nextToken());
@@ -63,21 +63,21 @@ public class Solution3 {
                 int p = Integer.parseInt(st.nextToken());
                 apList[i] = new AP(i+1,x,y,c,p);
             }
-            //´ä ÃÊ±âÈ­
+            //ë‹µ ì´ˆê¸°í™”
             answer = 0;
-            //A B ÁÂÇ¥ ÃÊ±âÈ­
+            //A B ì¢Œí‘œ ì´ˆê¸°í™”
             xa = 1;
             ya = 1;
             xb = 10;
             yb = 10;
              
             for(int i=0; i<m+1; i++) {
-                //ÀÌµ¿ÇÏ°í
+                //ì´ë™í•˜ê³ 
                 xa += dx[moveA[i]];
                 ya += dy[moveA[i]];
                 xb += dx[moveB[i]];
                 yb += dy[moveB[i]];
-                //ÃæÀü
+                //ì¶©ì „
                 charge();
             }
             System.out.println("#"+t+" "+answer);
@@ -85,7 +85,7 @@ public class Solution3 {
     }
      
     private static void charge() {
-        //°¢°¢ ´ê´Â APÀÇ ÆÄ¿ö¸¦ ´ãÀº ¹è¿­
+        //ê°ê° ë‹¿ëŠ” APì˜ íŒŒì›Œë¥¼ ë‹´ì€ ë°°ì—´
         ArrayList<AP> a = new ArrayList<>();
         a.add(new AP(0,0,0,0,0));
         ArrayList<AP> b = new ArrayList<>();
@@ -107,13 +107,13 @@ public class Solution3 {
     }
  
     public static int getCharge(ArrayList<AP> a, ArrayList<AP> b) {
-        //p¼øÀ¸·Î ³»¸²Â÷¼ø Á¤·Ä
+        //pìˆœìœ¼ë¡œ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
         Collections.sort(a);
         Collections.sort(b);
-        //¾È°ãÄ¡´Â°æ¿ì
+        //ì•ˆê²¹ì¹˜ëŠ”ê²½ìš°
         if(a.get(0).no != b.get(0).no) {
             return a.get(0).p + b.get(0).p;
-        }else { //°ãÄ¡´Â °æ¿ì
+        }else { //ê²¹ì¹˜ëŠ” ê²½ìš°
             int x1 = a.get(0).p + b.get(1).p;
             int x2 = a.get(1).p + b.get(0).p;
             return Math.max(x1, x2);

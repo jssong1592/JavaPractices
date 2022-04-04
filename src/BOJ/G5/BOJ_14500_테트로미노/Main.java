@@ -1,4 +1,4 @@
-package BOJ.G5.BOJ_14500_Å×Æ®·Î¹Ì³ë;
+package BOJ.G5.BOJ_14500_í…ŒíŠ¸ë¡œë¯¸ë…¸;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -25,61 +25,61 @@ public class Main {
 		
 		for (int i=3;i<N+3;i++) {
 			for (int j=3;j<M+3;j++) {
-				//1ÀÚ ¸ð¾ç(°¡·Î)
+				//1ìž ëª¨ì–‘(ê°€ë¡œ)
 				int result = map[i][j] + map[i][j+1] + map[i][j+2] + map[i][j+3];
 				if (result>maxResult) maxResult = result;
-				//1ÀÚ ¸ð¾ç(¼¼·Î)
+				//1ìž ëª¨ì–‘(ì„¸ë¡œ)
 				result = map[i][j] + map[i+1][j] + map[i+2][j] + map[i+3][j];
 				if (result>maxResult) maxResult = result;
-				//Á¤»ç°¢Çü
+				//ì •ì‚¬ê°í˜•
 				result = map[i][j] + map[i+1][j] + map[i][j+1] + map[i+1][j+1];
 				if (result>maxResult) maxResult = result;
-				//¤Ç
+				//ã…—
 				result = map[i+1][j] + map[i+1][j+1] + map[i+1][j+2] + map[i][j+1];
 				if (result>maxResult) maxResult = result;
-				//¤Ì
+				//ã…œ
 				result = map[i][j] + map[i][j+1] + map[i][j+2] + map[i+1][j+1];
 				if (result>maxResult) maxResult = result;
-				//¤¿
+				//ã…
 				result = map[i][j] + map[i+1][j] + map[i+2][j] + map[i+1][j+1];
 				if (result>maxResult) maxResult = result;
-				//¤Ã
+				//ã…“
 				result = map[i][j+1] + map[i+1][j+1] + map[i+2][j+1] + map[i+1][j];
 				if (result>maxResult) maxResult = result;
-				//¤¤(ÂªÀº ²ÀÁö°¡ ½ºÅ¸Æ®)
+				//ã„´(ì§§ì€ ê¼­ì§€ê°€ ìŠ¤íƒ€íŠ¸)
 				result = map[i][j] + map[i+1][j] + map[i+1][j+1] + map[i+1][j+2];
 				if (result>maxResult) maxResult = result;
-				//¤¤(½Ã°è90µµ)
+				//ã„´(ì‹œê³„90ë„)
 				result = map[i][j] + map[i][j-1] + map[i+1][j-1] + map[i+2][j-1];
 				if (result>maxResult) maxResult = result;
-				//¤¤(½Ã°è180µµ)
+				//ã„´(ì‹œê³„180ë„)
 				result = map[i][j] + map[i-1][j] + map[i-1][j-1] + map[i-1][j-2];
 				if (result>maxResult) maxResult = result;
-				//¤¤(½Ã°è270µµ)
+				//ã„´(ì‹œê³„270ë„)
 				result = map[i][j] + map[i][j+1] + map[i-1][j+1] + map[i-2][j+1];
 				if (result>maxResult) maxResult = result;
-				//¤¤(¼¼·Î°Å¿ï¹ÝÀü)
+				//ã„´(ì„¸ë¡œê±°ìš¸ë°˜ì „)
 				result = map[i][j] + map[i+1][j] + map[i+1][j-1] + map[i+1][j-2];
 				if (result>maxResult) maxResult = result;
-				//¤¤(½Ã°è90µµ)
+				//ã„´(ì‹œê³„90ë„)
 				result = map[i][j] + map[i][j-1] + map[i-1][j-1] + map[i-2][j-1];
 				if (result>maxResult) maxResult = result;
-				//¤¤(½Ã°è180µµ)
+				//ã„´(ì‹œê³„180ë„)
 				result = map[i][j] + map[i-1][j] + map[i-1][j+1] + map[i-1][j+2];
 				if (result>maxResult) maxResult = result;
-				//¤¤(½Ã°è270µµ)
+				//ã„´(ì‹œê³„270ë„)
 				result = map[i][j] + map[i][j+1] + map[i+1][j+1] + map[i+2][j+1];
 				if (result>maxResult) maxResult = result;
-				//¤©1
+				//ã„¹1
 				result = map[i][j] + map[i][j+1] + map[i+1][j+1] + map[i+1][j+2];
 				if (result>maxResult) maxResult = result;
-				//¤©2
+				//ã„¹2
 				result = map[i][j+1] + map[i+1][j+1] + map[i+1][j] + map[i+2][j];
 				if (result>maxResult) maxResult = result;
-				//¤©3
+				//ã„¹3
 				result = map[i][j] + map[i+1][j] + map[i+1][j+1] + map[i+2][j+1];
 				if (result>maxResult) maxResult = result;
-				//¤©4
+				//ã„¹4
 				result = map[i+1][j] + map[i+1][j+1] + map[i][j+1] + map[i][j+2];
 				if (result>maxResult) maxResult = result;
 			}

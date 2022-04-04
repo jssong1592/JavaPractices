@@ -1,4 +1,4 @@
-package BOJ.G5.BOJ_1068_Æ®¸®;
+package BOJ.G5.BOJ_1068_íŠ¸ë¦¬;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

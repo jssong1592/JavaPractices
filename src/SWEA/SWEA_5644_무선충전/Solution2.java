@@ -1,4 +1,4 @@
-package SWEA.SWEA_5644_¹«¼±ÃæÀü;
+package SWEA.SWEA_5644_ë¬´ì„ ì¶©ì „;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -33,7 +33,7 @@ public class Solution2 {
 		int T = Integer.parseInt(br.readLine());
 		
 		for (int tc=1;tc<=T;tc++) {
-			ArrayList<Station> list = new ArrayList<>(); //ÃæÀü¼Òµé ÀúÀå
+			ArrayList<Station> list = new ArrayList<>(); //ì¶©ì „ì†Œë“¤ ì €ìž¥
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			
 			int time = Integer.parseInt(st.nextToken());
@@ -52,7 +52,7 @@ public class Solution2 {
 			st = new StringTokenizer(br.readLine()," ");
 			for (int i=0;i<time;i++) dirB[i] = Integer.parseInt(st.nextToken());
 			
-			//Station Á¤º¸ ¹Þ±â
+			//Station ì •ë³´ ë°›ê¸°
 			for (int i=0;i<cnt;i++) {
 				st = new StringTokenizer(br.readLine());
 				int y = Integer.parseInt(st.nextToken());
@@ -64,12 +64,12 @@ public class Solution2 {
 			}
 			
 		
-			int total = 0;//´ä
+			int total = 0;//ë‹µ
 			
-			//¸Å ÃÊ¸¶´Ù A,B°¡ ÃÖ´ë·Î ¹ÞÀ» ¼ö ÀÖ´Â ÃæÀü·®À» °è»ê
+			//ë§¤ ì´ˆë§ˆë‹¤ A,Bê°€ ìµœëŒ€ë¡œ ë°›ì„ ìˆ˜ ìžˆëŠ” ì¶©ì „ëŸ‰ì„ ê³„ì‚°
 			for (int i=0;i<=time;i++) {
-				//1.Á¢¼Ó °¡´ÉÇÑ ÃæÀü¼Ò Ã£±â(0°³,1°³,¿©·¯°³, Áßº¹ÀÏ ¶§)
-				boolean[][] possible = new boolean[cnt][2];//»ç¿ëÀÚº° Á¢¼Ó °¡´ÉÇÑ ÃæÀü¼Ò Ç¥½Ã
+				//1.ì ‘ì† ê°€ëŠ¥í•œ ì¶©ì „ì†Œ ì°¾ê¸°(0ê°œ,1ê°œ,ì—¬ëŸ¬ê°œ, ì¤‘ë³µì¼ ë•Œ)
+				boolean[][] possible = new boolean[cnt][2];//ì‚¬ìš©ìžë³„ ì ‘ì† ê°€ëŠ¥í•œ ì¶©ì „ì†Œ í‘œì‹œ
 				for (int j = 0; j < cnt; j++) {
 					Station s = list.get(j);
 					if (Math.abs(s.x-A[0])+Math.abs(s.y-A[1])<=s.cover) {
@@ -81,22 +81,22 @@ public class Solution2 {
 				}
 				
 				
-				//2.Á¢¼Ó °¡´ÉÇÑ ÃæÀü¼Ò Áß¿¡¼­ max ÃæÀü·® Ã£±â
+				//2.ì ‘ì† ê°€ëŠ¥í•œ ì¶©ì „ì†Œ ì¤‘ì—ì„œ max ì¶©ì „ëŸ‰ ì°¾ê¸°
 				int maxA = 0, maxB = 0;
 				for (int j=0;j<cnt;j++) {
 					Station s = list.get(j);
-					if(possible[j][0]&&!possible[j][1]&&maxA<s.perform) {//A¸¸ °¡´É
+					if(possible[j][0]&&!possible[j][1]&&maxA<s.perform) {//Aë§Œ ê°€ëŠ¥
 						maxA = s.perform;
 					}
-					if(!possible[j][0]&&possible[j][1]&&maxB<s.perform) {//B¸¸ °¡´É
+					if(!possible[j][0]&&possible[j][1]&&maxB<s.perform) {//Bë§Œ ê°€ëŠ¥
 						maxB = s.perform;
 					}
 				}
 				
-				//2-2.A,B µÑÀÌ µ¿½Ã¿¡ Á¢¼Ó °¡´ÉÇÑ °æ¿ì
+				//2-2.A,B ë‘˜ì´ ë™ì‹œì— ì ‘ì† ê°€ëŠ¥í•œ ê²½ìš°
 				for (int j=0;j<cnt;j++) {
 					Station s = list.get(j);
-					if(possible[j][0]&&possible[j][1]) {//A,B ´Ù Á¢¼Ó °¡´É
+					if(possible[j][0]&&possible[j][1]) {//A,B ë‹¤ ì ‘ì† ê°€ëŠ¥
 						if(maxA<s.perform && maxA<=maxB) {
 							maxA = s.perform;
 						} else if (maxB<s.perform && maxB<maxA){
@@ -106,10 +106,10 @@ public class Solution2 {
 						
 				}
 				
-				//3.¼­·ÎÀÇ max°ªÀ» ´õÇÏ±â -> ´©Àû
+				//3.ì„œë¡œì˜ maxê°’ì„ ë”í•˜ê¸° -> ëˆ„ì 
 				total += maxA + maxB;
 				
-				//4.¹æÇâ ÀÌµ¿
+				//4.ë°©í–¥ ì´ë™
 				if(i>=time) break;
 				A[0] += dx[dirA[i]];
 				A[1] += dy[dirA[i]];

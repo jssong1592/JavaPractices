@@ -1,4 +1,4 @@
-package SWEA.D3.SWEA_1873_»óÈ£ÀÇ¹èÆ²ÇÊµå;
+package SWEA.D3.SWEA_1873_ìƒí˜¸ì˜ë°°í‹€í•„ë“œ;
 
 import java.io.BufferedReader;
 import java.io.IOException;

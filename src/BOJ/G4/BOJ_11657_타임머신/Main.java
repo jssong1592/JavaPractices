@@ -1,4 +1,4 @@
-package BOJ.G4.BOJ_11657_Å¸ÀÓ¸Ó½Å;
+package BOJ.G4.BOJ_11657_íƒ€ì„ë¨¸ì‹ ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -36,12 +36,12 @@ public class Main {
 			edgeList[i] = new Edge(from,to,weight);
 		}
 		
-		//º§¸¸ Æ÷µå ¾Ë°í¸®Áò »ç¿ë -> ***¸ğµç ³ëµå¿¡ ´ëÇØ ¸ğµç °£¼± È®ÀÎ(O(VE))
+		//ë²¨ë§Œ í¬ë“œ ì•Œê³ ë¦¬ì¦˜ ì‚¬ìš© -> ***ëª¨ë“  ë…¸ë“œì— ëŒ€í•´ ëª¨ë“  ê°„ì„  í™•ì¸(O(VE))
 		long[] result = new long[N+1];
 		Arrays.fill(result,Integer.MAX_VALUE);
 		result[1] = 0;
 		boolean flag = true;
-		// ½ÃÀÛÀº 1¹ø ³ëµå
+		// ì‹œì‘ì€ 1ë²ˆ ë…¸ë“œ
 		for (int i=1;i<N+1;i++) {
 			for (int j=0;j<M;j++) {
 				int from = edgeList[j].from;

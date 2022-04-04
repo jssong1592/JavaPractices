@@ -15,27 +15,27 @@ public class Main {
 		int r = Integer.parseInt(st.nextToken());
 		int c = Integer.parseInt(st.nextToken());
 		
-		Stack<Integer> stack = new Stack<>(); //4ºĞ¸é ´ÜÀ§ ÁÂÇ¥ ÀúÀåÇÒ arrayList
+		Stack<Integer> stack = new Stack<>(); //4ë¶„ë©´ ë‹¨ìœ„ ì¢Œí‘œ ì €ì¥í•  arrayList
 		
-		int length = (1<<N); //2ÀÇ NÁ¦°öºÎÅÍ ½ÃÀÛ
+		int length = (1<<N); //2ì˜ Nì œê³±ë¶€í„° ì‹œì‘
 		
 		while (length>1) {
 			length = length/2;
-			if (r<length) { //Ã£°íÀÚ ÇÏ´Â ÇàÀÌ ±æÀÌÀÇ Àı¹İº¸´Ù ÀÛÀ¸¸é
+			if (r<length) { //ì°¾ê³ ì í•˜ëŠ” í–‰ì´ ê¸¸ì´ì˜ ì ˆë°˜ë³´ë‹¤ ì‘ìœ¼ë©´
 				if (c<length) stack.push(0);
-				else { //Ã£°íÀÚ ÇÏ´Â ¿­ÀÌ ±æÀÌÀÇ Àı¹İº¸´Ù Å©¸é
+				else { //ì°¾ê³ ì í•˜ëŠ” ì—´ì´ ê¸¸ì´ì˜ ì ˆë°˜ë³´ë‹¤ í¬ë©´
 					stack.push(1);
-					c = c-length; //¿­ÀÇ »ó´ë À§Ä¡ Á¶Á¤
+					c = c-length; //ì—´ì˜ ìƒëŒ€ ìœ„ì¹˜ ì¡°ì •
 				}
-			} else { //Ã£°íÀÚ ÇÏ´Â ÇàÀÌ ±æÀÌÀÇ Àı¹İº¸´Ù Å©¸é
+			} else { //ì°¾ê³ ì í•˜ëŠ” í–‰ì´ ê¸¸ì´ì˜ ì ˆë°˜ë³´ë‹¤ í¬ë©´
 				if (c<length) {
 					stack.push(2);
 				}
 				else {
 					stack.push(3);
-					c = c-length; //¿­ÀÇ »ó´ë À§Ä¡ Á¶Á¤
+					c = c-length; //ì—´ì˜ ìƒëŒ€ ìœ„ì¹˜ ì¡°ì •
 				}
-				r = r-length; //ÇàÀÇ »ó´ë À§Ä¡ Á¶Á¤
+				r = r-length; //í–‰ì˜ ìƒëŒ€ ìœ„ì¹˜ ì¡°ì •
 			}
 		}
 		

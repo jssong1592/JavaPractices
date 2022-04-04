@@ -1,4 +1,4 @@
-package JOL.IM.JOL_1828_³ÃÀå°í;
+package JOL.IM.JOL_1828_ëƒ‰ì¥ê³ ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -23,7 +23,7 @@ public class Main {
 			arr[i] = new int[] {min,max};
 		}
 		
-		Arrays.sort(arr, (o1,o2)->{ //¹ŞÀº Àç·áµéÀ» ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä -> ´ÙÀ½ Àç·á´Â ¹üÀ§»óÀ¸·Î ¿À¸¥ÂÊ¿¡ ÀÖÀ» ¼ö ¹Û¿¡ ¾øÀ½
+		Arrays.sort(arr, (o1,o2)->{ //ë°›ì€ ì¬ë£Œë“¤ì„ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ -> ë‹¤ìŒ ì¬ë£ŒëŠ” ë²”ìœ„ìƒìœ¼ë¡œ ì˜¤ë¥¸ìª½ì— ìˆì„ ìˆ˜ ë°–ì— ì—†ìŒ
 			int[] a = (int[]) o1;
 			int[] b = (int[]) o2;
 			
@@ -32,21 +32,21 @@ public class Main {
 		
 //		System.out.println(Arrays.deepToString(arr));
 		
-		//Ã¹¹øÂ° Àç·áÀÇ ¿Âµµ¸¦ Ã¹ ¹üÀ§·Î ¼³Á¤
+		//ì²«ë²ˆì§¸ ì¬ë£Œì˜ ì˜¨ë„ë¥¼ ì²« ë²”ìœ„ë¡œ ì„¤ì •
 		int curMin = arr[0][0];
 		int curMax = arr[0][1];
 		ans++;
 		
 		for (int i=1;i<N;i++) {
 			
-			//´ÙÀ½ Àç·á°¡ ÇöÀçÀÇ ¹üÀ§¸¦ ÃÊ°úÇÏ¸é »õ·Î¿î ³ÃÀå°í ÇÊ¿äÇÑ °ÍÀÌ¹Ç·Î ³ÃÀå°í Ãß°¡ & ¹üÀ§ °»½Å
+			//ë‹¤ìŒ ì¬ë£Œê°€ í˜„ì¬ì˜ ë²”ìœ„ë¥¼ ì´ˆê³¼í•˜ë©´ ìƒˆë¡œìš´ ëƒ‰ì¥ê³  í•„ìš”í•œ ê²ƒì´ë¯€ë¡œ ëƒ‰ì¥ê³  ì¶”ê°€ & ë²”ìœ„ ê°±ì‹ 
 			if (curMax<arr[i][0]) {
 				ans++;
 				
 				curMin = arr[i][0];
 				curMax = arr[i][1];
 				
-			} else {//´ÙÀ½ Àç·á°¡ ÇöÀç ¹üÀ§ ³»¿¡ ÀÖ°Å³ª °ÉÃÄÀÖÀ¸¸é ¹üÀ§ Á¼È÷±â
+			} else {//ë‹¤ìŒ ì¬ë£Œê°€ í˜„ì¬ ë²”ìœ„ ë‚´ì— ìˆê±°ë‚˜ ê±¸ì³ìˆìœ¼ë©´ ë²”ìœ„ ì¢íˆê¸°
 				curMin = Math.max(curMin, arr[i][0]);
 				curMax = Math.min(curMax, arr[i][1]);
 			}

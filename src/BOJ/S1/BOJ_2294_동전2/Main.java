@@ -1,4 +1,4 @@
-package BOJ.S1.BOJ_2294_µ¿Àü2;
+package BOJ.S1.BOJ_2294_ë™ì „2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -27,7 +27,7 @@ public class Main {
 		
 		Arrays.sort(coins);
 		
-		//°¡Ä¡°¡ Å« µ¿ÀüºÎÅÍ ¹è¼ö °ü°èÀÎ ±Ý¾×µéÀ» ¸ÕÀú Ã³¸®
+		//ê°€ì¹˜ê°€ í° ë™ì „ë¶€í„° ë°°ìˆ˜ ê´€ê³„ì¸ ê¸ˆì•¡ë“¤ì„ ë¨¼ì € ì²˜ë¦¬
 		for (int i=n-1;i>=0;i--) {
 			int c = coins[i];
 			int cnt = 1;
@@ -38,8 +38,8 @@ public class Main {
 			}
 		}
 		
-		//ÀÌ¹Ì Ã³¸®µÈ ¹è¼ö °ü°è ±Ý¾×µéÀº ÃÖ¼Ò µ¿Àü °³¼ö·Î ÃÖÀûÈ­µÇ¾îÀÖÀ½
-		//ÀÌ ±Ý¾×+°¡Áö°í ÀÖ´Â µ¿Àü Áß 1°³¸¦ ´õÇÑ ±Ý¾×ÀÌ ÀÌ¹Ì È®ÀÎµÈ °¹¼öº¸´Ù Àû°Ô ¾µ ¼ö ÀÖ´Â °¹¼öÀÎÁö È®ÀÎ
+		//ì´ë¯¸ ì²˜ë¦¬ëœ ë°°ìˆ˜ ê´€ê³„ ê¸ˆì•¡ë“¤ì€ ìµœì†Œ ë™ì „ ê°œìˆ˜ë¡œ ìµœì í™”ë˜ì–´ìžˆìŒ
+		//ì´ ê¸ˆì•¡+ê°€ì§€ê³  ìžˆëŠ” ë™ì „ ì¤‘ 1ê°œë¥¼ ë”í•œ ê¸ˆì•¡ì´ ì´ë¯¸ í™•ì¸ëœ ê°¯ìˆ˜ë³´ë‹¤ ì ê²Œ ì“¸ ìˆ˜ ìžˆëŠ” ê°¯ìˆ˜ì¸ì§€ í™•ì¸
 		for (int i=0;i<10001;i++) {
 			if (resultList[i]!=-1) {
 				for (int coin:coins) {

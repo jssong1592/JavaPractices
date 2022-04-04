@@ -1,4 +1,4 @@
-package SWEA.SWEA_4012_¿ä¸®»ç;
+package SWEA.SWEA_4012_ìš”ë¦¬ì‚¬;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -20,7 +20,7 @@ public class Solution {
 			N = Integer.parseInt(br.readLine());
 			minResult = Integer.MAX_VALUE;
 			
-			//ÀÔ·Â µ¥ÀÌÅÍ¸¦ 2Â÷¿ø ¹è¿­¿¡ ÀúÀå
+			//ì…ë ¥ ë°ì´í„°ë¥¼ 2ì°¨ì› ë°°ì—´ì— ì €ì¥
 			syn = new int[N][N];
 			
 			for (int i=0;i<N;i++) {
@@ -41,7 +41,7 @@ public class Solution {
 	
 	static void combination(int cnt, int start) {
 		if (cnt==N/2) {
-			//isSelected¹è¿­¿¡¼­ true°¡ N/2°³ °ñ¶óÁö¸é ½Ã³ÊÁö ±¸ÇÏ±â
+			//isSelectedë°°ì—´ì—ì„œ trueê°€ N/2ê°œ ê³¨ë¼ì§€ë©´ ì‹œë„ˆì§€ êµ¬í•˜ê¸°
 			int result = findSynergy();
 			if (result<minResult) minResult = result;
 			return;
@@ -58,7 +58,7 @@ public class Solution {
 	static int findSynergy() {
 		int synergy1 = 0;
 		int synergy2 = 0;
-		//N°³ Áß¿¡¼­ 2°³ °ñ¶ó¼­ µÑ´Ù true¸é 1¹ø¿¡ ½Ã³ÊÁö ÇÕ, µÑ´Ù false¸é 2¹ø¿¡ ½Ã³ÊÁö ÇÕ
+		//Nê°œ ì¤‘ì—ì„œ 2ê°œ ê³¨ë¼ì„œ ë‘˜ë‹¤ trueë©´ 1ë²ˆì— ì‹œë„ˆì§€ í•©, ë‘˜ë‹¤ falseë©´ 2ë²ˆì— ì‹œë„ˆì§€ í•©
 		for (int i=0;i<N;i++) {
 			for (int j=i+1;j<N-1;j++) {
 				if (isSelected[i]&&isSelected[j]) {

@@ -32,7 +32,7 @@ public class Main {
 			}
 			
 			else if (n>1) {
-				dp[0][1] = dp[1][0] + arr[1][0];
+				dp[0][1] = dp[1][0] + arr[0][1];
 				dp[1][1] = dp[0][0] + arr[1][1];
 				
 				if (n==2) {
@@ -47,7 +47,7 @@ public class Main {
 					
 					System.out.println(Math.max(dp[0][n-1], dp[1][n-1]));
 					
-					System.out.println(Arrays.deepToString(dp));
+//					System.out.println(Arrays.deepToString(dp));
 				}
 			}
 					

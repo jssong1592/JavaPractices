@@ -36,7 +36,6 @@ public class Main {
 	}
 
 	static void attempt(int i, int j) {
-		if (flag) return;
 		if (j==9) {
 			if (i<8) {
 				attempt(i+1,0);
@@ -49,6 +48,7 @@ public class Main {
 			for (int k = 1; k <= 10; k++) {
 				if (k == 10) {
 					sudoku[i][j] = 0;
+					blocked = true;
 					return;
 				}
 					
@@ -59,10 +59,7 @@ public class Main {
 					attempt(i,j+1);
 					
 					if (flag) return;
-				} else {
-					blocked = true;
-					continue;
-				}
+				} 
 			}
 		} else {
 			attempt(i,j+1);

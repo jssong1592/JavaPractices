@@ -59,7 +59,7 @@ public class Main {
 					attempt(i,j+1);
 					
 					if (flag) return;
-				} 
+				}
 			}
 		} else {
 			attempt(i,j+1);

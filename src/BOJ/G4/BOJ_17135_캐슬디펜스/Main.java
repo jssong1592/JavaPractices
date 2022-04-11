@@ -23,13 +23,13 @@ public class Main {
 	
 	static class Enemy extends Point {
 		int distance;
-		boolean isInMap, isOut;
+		boolean isInMap;
 		
 		public Enemy(int x, int y) {
 			super(x, y);
 			distance = 0;
 			isInMap = true;
-			isOut = false;
+			
 		}
 		
 	}

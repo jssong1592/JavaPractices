@@ -10,24 +10,34 @@ public class Main {
 		int A = sc.nextInt();
 		int B = sc.nextInt();
 		
-		int ans = 0;
-		int maxGCD = Integer.MIN_VALUE;
-		int minLCM = Integer.MAX_VALUE;
-		int range = Math.max(A, B);
-		for (int N=2;N<=range;N++) {
-			int temp = gcd(gcd(A,B),N);
-			int lcm = (A+N)*(B+N)/temp;
-			if (lcm<minLCM) {
-				ans = N;
-				minLCM = lcm;
+		int ans = 1;
+		
+		int diff = Math.abs(A-B);
+		if (diff==0) ans = 1;
+		else {
+			int minLCM = Integer.MAX_VALUE;
+			for (int i=1;i<=Math.sqrt(diff);i++) {
+				if (diff%i==0) {
+					int temp = Math.max(i, diff/i);
+					for (int n=temp;n>0;n--) {
+						if ((A+n) % temp == 0 && (B+n) % temp == 0) {
+							ans = n;
+						}
+					}
+				}
 			}
 		}
+		
 		System.out.println(ans);
 	}
 	
-	static int gcd(int a,int b) {
-		if (b==0) return a;
-		return gcd(b,a%b);
+	static int lcm(int x, int y) {
+		return x*y/gcd(x,y);
+	}
+	
+	static int gcd(int i, int j) {
+		if (j==0) return i;
+		return gcd(j,i%j);
 	}
 
 }

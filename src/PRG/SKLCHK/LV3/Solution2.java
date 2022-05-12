@@ -1,5 +1,6 @@
 package PRG.SKLCHK.LV3;
 
+import java.util.HashSet;
 
 public class Solution2 {
 	public int[][] solution(int[][] nodeinfo) {
@@ -12,6 +13,8 @@ public class Solution2 {
 		Solution2 sol = new Solution2();
 		System.out.println(sol.solution(nodeinfo));
 
+		HashSet<Integer> set = new HashSet<Integer>();
+		
 		
 		
 	}
